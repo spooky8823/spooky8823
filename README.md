@@ -35,7 +35,7 @@ When I'm not coding, I'm probably planning the next project anyway.
 ## 💻 Technologies
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=rust,cpp,python,bash,nodejs,electron,js,html,css,supabase,gtk,github,git,vscode,linux&perline=8"/>
+<img src="https://skillicons.dev/icons?i=rust,cpp,python,bash,nodejs,electron,js,html,css,supabase,gtk,github,git,vscode,linux,vscode&perline=8"/>
 </p>
 
 ---
