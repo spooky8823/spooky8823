@@ -24,7 +24,7 @@ I build software that I'd actually want to use.
 
 ## 🚀 About Me
 
-I'm a developer who enjoys turning ideas into real software.
+I'm a person who enjoys turning ideas into real software.
 
 I spend most of my time experimenting with **Rust**, **AI**, desktop applications, automation, and open-source tools. I enjoy learning how systems work under the hood and building projects that are practical, fast, and enjoyable to use.
 
