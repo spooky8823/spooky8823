@@ -60,35 +60,32 @@ When I'm not coding, I'm usually planning the next project.
 
 <p align="center">
 
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true">
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=default&hide_border=true">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true">
-</picture>
+<a href="https://github.com/Vibifiy-c/Vibiclaw">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true#gh-dark-mode-only"
+    alt="Vibiclaw (Dark)">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=default&hide_border=true#gh-light-mode-only"
+    alt="Vibiclaw (Light)">
+</a>
 
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true">
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=default&hide_border=true">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true">
-</picture>
+<a href="https://github.com/Vibifiy-c/VibiPass">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true#gh-dark-mode-only"
+    alt="VibiPass (Dark)">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=default&hide_border=true#gh-light-mode-only"
+    alt="VibiPass (Light)">
+</a>
 
-<picture>
-  <source
-    media="(prefers-color-scheme: dark)"
-    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=github_dark&hide_border=true">
-  <source
-    media="(prefers-color-scheme: light)"
-    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=default&hide_border=true">
-  <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=github_dark&hide_border=true">
-</picture>
+<a href="https://github.com/Vibifiy-c/VibiBrowser">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=github_dark&hide_border=true#gh-dark-mode-only"
+    alt="VibiBrowser (Dark)">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=default&hide_border=true#gh-light-mode-only"
+    alt="VibiBrowser (Light)">
+</a>
 
 </p>
 
