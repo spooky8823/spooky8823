@@ -57,17 +57,18 @@ When I'm not coding, I'm usually planning the next project.
 
 ## Featured Projects
 
-### Vibiclaw
+## Featured Projects
 
-An open-source AI coding assistant built with Rust and GTK, featuring an integrated editor and permission-aware AI workflows.
 
-### VibiPass
+<p align="center">
+  <a href="https://github.com/Vibifiy-c/Vibiclaw">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=transparent&hide_border=true" />
+  </a>
 
-A local-first password manager focused on privacy and strong encryption.
-
-### Vibifiy
-
-Building modern open-source software that belongs to everyone.
+  <a href="https://github.com/Vibifiy-c/VibiPass">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=transparent&hide_border=true" />
+  </a>
+</p>
 
 ---
 
