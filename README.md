@@ -57,17 +57,7 @@ When I'm not coding, I'm usually planning the next project.
 
 ## Featured Projects
 
-<p align="center">
-  <a href="https://github.com/Vibifiy-c/Vibiclaw">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiClaw&theme=github_dark&hide_border=true" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/Vibifiy-c/VibiPass">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true" />
-  </a>
-</p>
+<img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true" />
 
 ---
 
