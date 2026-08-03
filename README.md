@@ -55,11 +55,42 @@ When I'm not coding, I'm usually planning the next project.
 
 ---
 
+
 ## Featured Projects
 
-<img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true" />   <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true" />     
-<img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=github_dark&hide_border=true" />     <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibifiy-website&theme=github_dark&hide_border=true" />
+<p align="center">
 
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true">
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=default&hide_border=true">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true">
+</picture>
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true">
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=default&hide_border=true">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true">
+</picture>
+
+<picture>
+  <source
+    media="(prefers-color-scheme: dark)"
+    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=github_dark&hide_border=true">
+  <source
+    media="(prefers-color-scheme: light)"
+    srcset="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=default&hide_border=true">
+  <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=github_dark&hide_border=true">
+</picture>
+
+</p>
 ---
 
 ## GitHub
