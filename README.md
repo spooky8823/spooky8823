@@ -32,10 +32,10 @@ When I'm not coding, I'm probably planning the next project anyway.
 
 ---
 
-## 💻 Technologies
+##  The things is love building with:
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=rust,cpp,python,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,windows,vscode&perline=8"/>
+<img src="https://skillicons.dev/icons?i=rust,cpp,python,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,windows,vscode,blender,figma,mint&perline=8"/>
 </p>
 
 ---
