@@ -57,51 +57,17 @@ When I'm not coding, I'm usually planning the next project.
 
 ## Featured Projects
 
-<table>
-<tr>
-<td width="50%" valign="top">
-
-### Vibiclaw
-
-<img src="https://github.com/Vibifiy-c/vibifiy-website/blob/main/logo.jpg?raw=true" width="48">
-
-A modern AI coding assistant built with **Rust**, **GTK**, **JavaScript**, **HTML**, and **CSS**.
-
-- Agentic workflows
-- Built-in code editor
-- Permission-aware AI
-- Open Source
-
-<p>
-<a href="https://github.com/Vibifiy-c/Vibiclaw">
-<img src="https://img.shields.io/badge/View_Repository-181717?style=for-the-badge&logo=github">
-</a>
+<p align="center">
+  <a href="https://github.com/Vibifiy-c/Vibiclaw">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true" />
+  </a>
 </p>
 
-</td>
-
-<td width="50%" valign="top">
-
-### VibiPass
-
-<img src="https://github.com/Vibifiy-c/vibifiy-website/blob/main/logo.jpg?raw=true" width="48">
-
-A local-first password manager focused on privacy and strong encryption.
-
-- Local encrypted storage
-- Privacy first
-- Fast and lightweight
-- Open Source
-
-<p>
-<a href="https://github.com/Vibifiy-c/VibiPass">
-<img src="https://img.shields.io/badge/View_Repository-181717?style=for-the-badge&logo=github">
-</a>
+<p align="center">
+  <a href="https://github.com/Vibifiy-c/VibiPass">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true" />
+  </a>
 </p>
-
-</td>
-</tr>
-</table>
 
 ---
 
