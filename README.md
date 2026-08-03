@@ -9,12 +9,7 @@
 <h1 align="center">My Contribution Graph:</h1>
 
 <p align="center">
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=transparent&hide_border=true"/>
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=transparent&hide_border=true"/>
-</p>
-
-<p align="center">
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=github-dark&hide_border=true&bg_color=0D1117&color=6C63FF&line=8B5CF6&point=FFFFFF"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=spooky8823&theme=github-dark&hide_border=true&bg_color=0D1117&color=6C63FF&line=8B5CF6&point=FFFFFF"/>
 </p>
 
 
