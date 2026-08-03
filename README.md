@@ -6,15 +6,14 @@
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=23&pause=1000&color=8B5CF6&center=true&vCenter=true&width=700&lines=Building+cool+things.;Rust+Enjoyer.;Open+Source+Advocate.;AI+Developer.;Always+Learning."/>
 </p>
 
-<h1 align="center">My Contribution Graph:</h1>
+<h1 align="center">Contribution Graph</h1>
 
 <p align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=spooky8823&theme=github-dark&hide_border=true&bg_color=0D1117&color=6C63FF&line=8B5CF6&point=FFFFFF"/>
 </p>
 
-
 <p align="center">
-I build apps which i feel are necessary and literally automate everything! .
+I build software that solves problems, automates repetitive tasks, and makes everyday workflows simpler.
 </p>
 
 <p align="center">
@@ -27,62 +26,62 @@ I build apps which i feel are necessary and literally automate everything! .
 
 ---
 
-## 🚀 About Me
+## About Me
 
-I'm a person who enjoys turning ideas into real software.
+I'm a developer who enjoys turning ideas into real software.
 
-I spend most of my time experimenting with **Rust**, **AI**, desktop applications, automation, and open-source tools. I enjoy learning how systems work under the hood and building projects that are practical, fast, and enjoyable to use.
+Most of my time is spent experimenting with **Rust**, **AI**, desktop applications, automation, and open-source tools. I enjoy understanding how systems work under the hood and building software that is fast, practical, and enjoyable to use.
 
-When I'm not coding, I'm probably planning the next project anyway.
+When I'm not coding, I'm usually planning the next project.
 
 ---
 
-##  The things is love building with:
+## Technologies
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=rust,cpp,python,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,vscode,blender,figma&perline=8"/>
+<img src="https://skillicons.dev/icons?i=rust,cpp,python,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma&perline=8"/>
 </p>
 
 ---
 
-## 🛠 Current Focus
+## Current Focus
 
-- 🤖 AI-powered developer tools
-- 🦀 Rust desktop applications
-- 🔐 Privacy-focused software
-- ⚡ Open-source development
-- 🖥 Native applications with GTK
-- 🌐 Modern web technologies
+- AI-powered developer tools
+- Native desktop applications with Rust and GTK
+- Privacy-focused software
+- Open-source development
+- Modern web technologies
+- Automation and developer tooling
 
 ---
 
-## 🌟 Featured Projects
+## Featured Projects
 
-### 🚀 Vibiclaw
+### Vibiclaw
 
-An AI coding assistant built with Rust and GTK, featuring an integrated editor and permission-aware AI workflows.
+An open-source AI coding assistant built with Rust and GTK, featuring an integrated editor and permission-aware AI workflows.
 
-### 🔐 VibiPass
+### VibiPass
 
 A local-first password manager focused on privacy and strong encryption.
 
-### 💜 Vibifiy
+### Vibifiy
 
 Building modern open-source software that belongs to everyone.
 
 ---
 
-## 📈 GitHub
+## GitHub
 
 <p align="center">
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=YOUR_USERNAME&show_icons=true&theme=transparent&hide_border=true"/>
+<img height="170" src="https://github-readme-stats.vercel.app/api?username=spooky8823&show_icons=true&theme=transparent&hide_border=true"/>
 
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_USERNAME&layout=compact&theme=transparent&hide_border=true"/>
+<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=spooky8823&layout=compact&theme=transparent&hide_border=true"/>
 </p>
 
 ---
 
-## 💭 Philosophy
+## Philosophy
 
 > "The best software is software people can understand, improve, and truly own."
 
@@ -90,13 +89,13 @@ I believe open source creates better software, stronger communities, and better 
 
 ---
 
-## ☕ Beyond Code
+## Beyond Code
 
-- 🧠 Learning something new every day
-- 🎮 Minecraft enthusiast
-- 🔬 Exploring new technologies
-- 📖 Always experimenting
-- 🚀 Building instead of waiting
+- Learning something new every day
+- Minecraft
+- Exploring new technologies
+- Building experimental projects
+- Automating everyday tasks
 
 ---
 
