@@ -8,7 +8,7 @@
 
 <h1 align="center">My Contribution Graph:</h1>
 
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=spooky8823&theme=github-dark"/>
+<img src="https://ghchart.rshah.org/spooky8823" />
 
 <p align="center">
 I build apps which i feel are necessary and literally automate everything! .
