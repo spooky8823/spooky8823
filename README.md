@@ -6,6 +6,43 @@
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=23&pause=1000&color=8B5CF6&center=true&vCenter=true&width=700&lines=Building+cool+things.;Rust+Enjoyer.;Open+Source+Advocate.;AI+Developer.;Always+Learning."/>
 </p>
 
+---
+
+### My Repositories:
+
+<p align="center">
+
+<a href="https://github.com/Vibifiy-c/Vibiclaw">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true#gh-dark-mode-only"
+    alt="Vibiclaw (Dark)">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=default&hide_border=true#gh-light-mode-only"
+    alt="Vibiclaw (Light)">
+</a>
+
+<a href="https://github.com/Vibifiy-c/VibiPass">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true#gh-dark-mode-only"
+    alt="VibiPass (Dark)">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=default&hide_border=true#gh-light-mode-only"
+    alt="VibiPass (Light)">
+</a>
+
+<a href="https://github.com/Vibifiy-c/VibiBrowser">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=github_dark&hide_border=true#gh-dark-mode-only"
+    alt="VibiBrowser (Dark)">
+  <img
+    src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=default&hide_border=true#gh-light-mode-only"
+    alt="VibiBrowser (Light)">
+</a>
+
+</p>
+
+---
+
 <h1 align="center">Contribution Graph</h1>
 
 <p align="center">
