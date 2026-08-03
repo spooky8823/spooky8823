@@ -35,7 +35,7 @@ When I'm not coding, I'm probably planning the next project anyway.
 ##  The things is love building with:
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=rust,cpp,python,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,vscode,blender,figma,kaggle&perline=8"/>
+<img src="https://skillicons.dev/icons?i=rust,cpp,python,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,vscode,blender,figma&perline=8"/>
 </p>
 
 ---
