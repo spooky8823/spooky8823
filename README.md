@@ -57,7 +57,9 @@ When I'm not coding, I'm usually planning the next project.
 
 ## Featured Projects
 
-<img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true" />   <img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true" />
+<img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=Vibiclaw&theme=github_dark&hide_border=true" />   
+<img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiPass&theme=github_dark&hide_border=true" />  
+<img src="https://github-readme-stats-sigma-five.vercel.app/api/pin/?username=Vibifiy-c&repo=VibiBrowser&theme=github_dark&hide_border=true" />
 
 ---
 
