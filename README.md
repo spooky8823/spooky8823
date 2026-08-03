@@ -7,8 +7,6 @@
 </p>
 
 <h1 align="center">My Contribution Graph:</h1>
-
-
 <p align="center">
 <img src="https://streak-stats.demolab.com?user=YOUR_USERNAME&theme=transparent&hide_border=true"/>
 </p>
