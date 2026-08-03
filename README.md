@@ -6,7 +6,11 @@
 <img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=23&pause=1000&color=8B5CF6&center=true&vCenter=true&width=700&lines=Building+cool+things.;Rust+Enjoyer.;Open+Source+Advocate.;AI+Developer.;Always+Learning."/>
 </p>
 
-<h1 align="center">Hey 👋 I'm Spooky</h1>
+<h1 align="center">Spooky</h1>
+
+<p align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=github-dark&hide_border=true&bg_color=0D1117&color=6C63FF&line=8B5CF6&point=FFFFFF"/>
+</p>
 
 <p align="center">
 I build software that I'd actually want to use.
