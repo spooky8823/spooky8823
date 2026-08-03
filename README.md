@@ -91,6 +91,7 @@ When I'm not coding, I'm usually planning the next project.
 </picture>
 
 </p>
+
 ---
 
 ## GitHub
