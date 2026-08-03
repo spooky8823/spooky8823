@@ -9,7 +9,7 @@
 <h1 align="center">Spooky</h1>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=YOUR_USERNAME&theme=github-dark&hide_border=true&bg_color=0D1117&color=6C63FF&line=8B5CF6&point=FFFFFF"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=spooky8823&theme=github-dark&hide_border=true&bg_color=0D1117&color=6C63FF&line=8B5CF6&point=FFFFFF"/>
 </p>
 
 <p align="center">
