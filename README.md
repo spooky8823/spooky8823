@@ -8,7 +8,9 @@
 
 <h1 align="center">My Contribution Graph:</h1>
 
-<img src="https://ghchart.rshah.org/409ba5/spooky8823" />
+<p align="center">
+  <img src="https://raw.githubusercontent.com/spooky8823/spooky8823/output/github-contribution-grid-snake-dark.svg">
+</p>
 
 <p align="center">
 I build apps which i feel are necessary and literally automate everything! .
