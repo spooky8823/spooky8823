@@ -8,12 +8,6 @@
 
 ---
 
-<h1 align="center">Contribution Graph</h1>
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=spooky8823&theme=github-dark&hide_border=true&bg_color=0D1117&color=6C63FF&line=8B5CF6&point=FFFFFF"/>
-</p>
-
 <p align="center">
 I build software that solves problems, automates repetitive tasks, and makes everyday workflows simpler.
 </p>
