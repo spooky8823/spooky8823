@@ -8,10 +8,6 @@
 
 ---
 
-
-
----
-
 <h1 align="center">Contribution Graph</h1>
 
 <p align="center">
@@ -41,6 +37,23 @@ Most of my time is spent experimenting with **Rust**, **AI**, desktop applicatio
 When I'm not coding, I'm usually planning the next project.
 
 ---
+
+## My Repositories:
+https://github.com/Vibifiyy/vibifiy-website     this is the repository for my website 
+https://github.com/Vibifiyy/VibiClaw            this is the ai automation app which is under development
+https://github.com/Vibifiyy/VibiBrowser         this is the browser which is under devlopment 
+https://github.com/spooky8823/spooky8823        my profile
+https://github.com/Vibifiyy/.github             organization profile
+https://github.com/Vibifiyy/VibiPass            my secure password vault which is in production
+
+---
+
+## The Respositories which are impressive:
+
+https://github.com/Vibifiyy/VibiClaw   
+https://github.com/Vibifiyy/VibiPass 
+
+these two repositories are my best repositories until now
 
 ## Technologies
 
