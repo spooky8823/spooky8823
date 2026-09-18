@@ -33,12 +33,12 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 ---
 
 ## My Repositories:
-https://github.com/Vibifiyy/vibifiy-website     this is the repository for my website                                                                              
-https://github.com/Vibifiyy/VibiClaw            this is the ai automation app which is under development                                                           
-https://github.com/Vibifiyy/VibiBrowser         this is the browser which is under devlopment                                                                      
-https://github.com/spooky8823/spooky8823        my profile                                                                                                         
-https://github.com/Vibifiyy/.github             organization profile                                                                                               
-https://github.com/Vibifiyy/VibiPass            my secure password vault which is in production                                                                    
+https://github.com/Vibifiyy/vibifiy-website     This is the repository for my website  which is under devlopment                                                            
+https://github.com/Vibifiyy/VibiClaw            This is the ai automation app which is under development                                                           
+https://github.com/Vibifiyy/VibiBrowser         This is the browser which is under devlopment                                                                      
+https://github.com/spooky8823/spooky8823        My Profile                                                                                                         
+https://github.com/Vibifiyy/.github             Organization Profile                                                                                               
+https://github.com/Vibifiyy/VibiPass            My Secure Password Vault which is in Production                                                                    
 
 ---
 
