@@ -47,7 +47,7 @@ https://github.com/Vibifiyy/VibiPass            my secure password vault which i
 https://github.com/Vibifiyy/VibiClaw   
 https://github.com/Vibifiyy/VibiPass 
 
-**These 2 Repositories are my best repositories until now **
+### These 2 Repositories are my best repositories until now 
 
 ---
 
@@ -67,18 +67,6 @@ https://github.com/Vibifiyy/VibiPass
 - Open-source development
 - Modern web technologies
 - Automation and developer tooling
-
----
-
-
-
-## GitHub
-
-<p align="center">
-<img height="170" src="https://github-readme-stats.vercel.app/api?username=spooky8823&show_icons=true&theme=transparent&hide_border=true"/>
-
-<img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=spooky8823&layout=compact&theme=transparent&hide_border=true"/>
-</p>
 
 ---
 
