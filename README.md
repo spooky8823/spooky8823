@@ -24,11 +24,11 @@ I build software that solves problems, automates repetitive tasks, and makes eve
 
 ## About Me
 
-I'm a developer who enjoys turning ideas into real software.
+I'm a college student who enjoys turning ideas into real software.
 
 Most of my time is spent experimenting with **Rust**, **AI**, desktop applications, automation, and open-source tools. I enjoy understanding how systems work under the hood and building software that is fast, practical, and enjoyable to use.
 
-When I'm not coding, I'm usually planning the next project.
+When I'm not coding, I'm usually planning the next project or just chilling.
 
 ---
 
