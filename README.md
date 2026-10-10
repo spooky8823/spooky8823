@@ -54,7 +54,7 @@ https://github.com/Vibifiyy/VibiPass
 ## Technologies
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=rust,cpp,python,java,minecraft,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma,&perline=8"/>
+<img src="https://skillicons.dev/icons?i=rust,cpp,python,java,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma&perline=8"/>
 </p>
 
 ---
