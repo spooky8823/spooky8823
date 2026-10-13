@@ -43,8 +43,8 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 
 ## The Respositories which are impressive:
 
-## [VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)   
-## [VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass) 
+[VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)   
+[VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass) 
 
 ### These 2 Repositories are my best repositories until now 
 
