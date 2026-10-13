@@ -33,12 +33,12 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 ---
 
 ### My Repositories:
-[Spooky8823](https://github.com/spooky8823/spooky8823)                                This is about me                                                                                                   
-[Vibifiy Web](https://github.com/spooky8823/Vibifiy/tree/main/Vibifiy%20Website)      This is the repository for my website  which is under devlopment              
-[VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                  This is the ai automation app which is under development                            
-[Vibrium](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                    This is the browser which is under devlopment                                           
-[VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                  My Secure Password Vault which is in Production                                         
-[Profiles Mod](https://github.com/spooky8823/Profiles-Mod)                            A Minecraft Mod which you can activate profiles and configure what they do when activated
+[Spooky8823](https://github.com/spooky8823/spooky8823)                                                                                                                                  
+[Vibifiy Web](https://github.com/spooky8823/Vibifiy/tree/main/Vibifiy%20Website)                   
+[VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                                             
+[Vibrium](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                                                               
+[VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                                                          
+[Profiles Mod](https://github.com/spooky8823/Profiles-Mod)                             
 ---
 
 ## The Respositories which are impressive:
