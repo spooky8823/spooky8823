@@ -38,7 +38,7 @@ https://github.com/Vibifiyy/VibiClaw            This is the ai automation app wh
 https://github.com/Vibifiyy/VibiBrowser         This is the browser which is under devlopment                                                                      
 https://github.com/spooky8823/spooky8823        My Profile                                                                                                         
 https://github.com/Vibifiyy/.github             Organization Profile                                                                                               
-https://github.com/Vibifiyy/VibiPass            My Secure Password Vault which is in Production                                                                    
+[VibiPass](https://github.com/spooky8823/Vibifiy/VibiPass)           My Secure Password Vault which is in Production                                                                    
 
 ---
 
