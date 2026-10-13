@@ -32,7 +32,7 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 
 ---
 
-## My Repositories:
+### My Repositories:
 [Spooky8823](https://github.com/spooky8823/spooky8823)                                This is about me                                                                                                   
 [Vibifiy Web](https://github.com/spooky8823/Vibifiy/tree/main/Vibifiy%20Website)      This is the repository for my website  which is under devlopment              
 [VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                  This is the ai automation app which is under development                            
