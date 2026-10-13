@@ -33,19 +33,18 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 ---
 
 ## My Repositories:
-https://github.com/Vibifiyy/vibifiy-website     This is the repository for my website  which is under devlopment                                                            
-https://github.com/Vibifiyy/VibiClaw            This is the ai automation app which is under development                                                           
-https://github.com/Vibifiyy/VibiBrowser         This is the browser which is under devlopment                                                                      
-https://github.com/spooky8823/spooky8823        My Profile                                                                                                         
-https://github.com/Vibifiyy/.github             Organization Profile                                                                                               
-[VibiPass](https://github.com/spooky8823/Vibifiy/VibiPass)           My Secure Password Vault which is in Production                                                                    
-
+[Spooky8823](https://github.com/spooky8823/spooky8823)                                This is about me 
+[Vibifiy Web](https://github.com/spooky8823/Vibifiy/tree/main/Vibifiy%20Website)      This is the repository for my website  which is under devlopment              
+[VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                  This is the ai automation app which is under development                            
+[Vibrium](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                    This is the browser which is under devlopment                                           
+[VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                  My Secure Password Vault which is in Production 
+[Profiles Mod](https://
 ---
 
 ## The Respositories which are impressive:
 
-https://github.com/Vibifiyy/VibiClaw   
-https://github.com/Vibifiyy/VibiPass 
+[VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)   
+[VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass) 
 
 ### These 2 Repositories are my best repositories until now 
 
@@ -67,6 +66,7 @@ https://github.com/Vibifiyy/VibiPass
 - Open-source development
 - Modern web technologies
 - Automation and developer tooling
+- Minecraft Moding
 
 ---
 
