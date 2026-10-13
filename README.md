@@ -37,8 +37,8 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 [Vibifiy Web](https://github.com/spooky8823/Vibifiy/tree/main/Vibifiy%20Website)      This is the repository for my website  which is under devlopment              
 [VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                  This is the ai automation app which is under development                            
 [Vibrium](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                    This is the browser which is under devlopment                                           
-[VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                  My Secure Password Vault which is in Production 
-[Profiles Mod](https://
+[VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                  My Secure Password Vault which is in Production                                         
+[Profiles Mod](https://github.com/spooky8823/Profiles-Mod)
 ---
 
 ## The Respositories which are impressive:
