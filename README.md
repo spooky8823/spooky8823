@@ -38,7 +38,7 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 [VibiClaw](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                  This is the ai automation app which is under development                            
 [Vibrium](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                    This is the browser which is under devlopment                                           
 [VibiPass](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                  My Secure Password Vault which is in Production                                         
-[Profiles Mod](https://github.com/spooky8823/Profiles-Mod)                            A Minecraft Mod which u cant activate profiles and configure what they do when it is activated
+[Profiles Mod](https://github.com/spooky8823/Profiles-Mod)                            A Minecraft Mod which you can activate profiles and configure what they do when activated
 ---
 
 ## The Respositories which are impressive:
