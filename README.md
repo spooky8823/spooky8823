@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=23&pause=1000&color=8B5CF6&center=true&vCenter=true&width=700&lines=Building+cool+things.;Rust+Enjoyer.;Open+Source+Advocate.;AI+Developer.;Always+Learning."/>
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&weight=600&size=23&pause=1000&color=8B5CF6&center=true&vCenter=true&width=700&lines=Building+cool+things.;Rust.;Open+Source+Advocate.;AI+Developer.;Always+Learning."/>
 </p>
 
 ---
