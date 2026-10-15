@@ -34,9 +34,9 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 
 ### My Repositories:
 [Spooky8823](https://github.com/spooky8823/spooky8823)                                                                                                                                  
-[Vibifiy Web](https://github.com/spooky8823/Vibifiy/tree/main/Vibifiy%20Website)                   
+[![Vibifiy Website](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibifiy+Website&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/Vibifiy%20Website)                 
 [![VibiClaw](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiClaw&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                                           
-[Vibrium](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                                                               
+[![Vibrium](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibrium&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                                                        
 [![VibiPass](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiPass&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                                                       
 [Profiles Mod](https://github.com/spooky8823/Profiles-Mod)                             
 ---
