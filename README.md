@@ -33,18 +33,18 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 ---
 
 ### My Repositories:
-[![My profile](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=My+profile&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/spooky8823)                                                                                                                               
+[![My Profile](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=My+Profile&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/spooky8823)                                                                                                                             
 [![Vibifiy Website](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibifiy+Website&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/Vibifiy%20Website)                 
-[![VibiClaw](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiClaw&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                                           
-[![Vibrium](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibrium&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                                                        
-[![VibiPass](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiPass&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                                                       
-[![Profiles Mod](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Profiles+Mod&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Profiles-Mod)                          
+[![Vibiclaw](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibiclaw&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                                        
+[![Vibrium](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibrium&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                                                     
+[![VibiPass](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiPass&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                                                
+[![Profiles Mod ](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Profiles+Mod+&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Profiles-Mod)                        
 ---
 
 ## The Respositories which are impressive:
 
-[![VibiClaw](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiClaw&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)      
-[![VibiPass](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiPass&bg=a04abf&fg=000000&style=rounded&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)  
+[![Vibiclaw](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibiclaw&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)      
+[![VibiPass](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiPass&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)    
 
 ### These 2 Repositories are my best repositories until now 
 
