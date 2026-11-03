@@ -37,7 +37,8 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 [![Vibiclaw](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibiclaw&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw)                                        
 [![Vibrium](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Vibrium&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/Vibrium)                                                     
 [![VibiPass](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=VibiPass&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Vibifiy/tree/main/VibiPass)                                                
-[![Profiles Mod ](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Profiles+Mod+&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Profiles-Mod)                        
+[![Profiles Mod ](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Profiles+Mod+&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Profiles-Mod) 
+[![Alive README](https://alive-readme-buttons.spookyminecraftgamer.workers.dev/btn.svg?text=Alive+README&bg=24292f&fg=ffffff&icon=github&style=pill&fill=gradient&anim=shine)](https://github.com/spooky8823/Alive-Readme)
 ---
 
 ## The Respositories which are impressive:
