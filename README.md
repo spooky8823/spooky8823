@@ -14,8 +14,6 @@ I build software that solves problems, automates repetitive tasks, and makes eve
 
 <p align="center">
 <a href="https://github.com/Vibifiy-c">
-<img src="https://img.shields.io/badge/Vibifiy-Founder-6C63FF?style=for-the-badge">
-</a>
 <img src="https://img.shields.io/badge/Open%20Source-Lover-success?style=for-the-badge">
 <img src="https://img.shields.io/badge/Copyleft-Supported-blue?style=for-the-badge">
 </p>
