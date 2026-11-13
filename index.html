@@ -4,18 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#09090f">
-  <meta name="description" content="Spooky's corner of the internet. Student, developer, and open-source builder.">
+  <meta name="description" content="Spooky's portfolio: software projects, open-source work, and things I'm learning.">
   <title>Spooky. — Building things that matter</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <div class="nav-shell">
     <nav class="wrap">
       <a class="brand" href="#top">spooky<span>.</span></a>
       <div class="nav-links">
+        <a href="#activity">Activity</a>
         <a href="#about">About</a>
         <a href="#work">Projects</a>
         <a href="#stack">Stack</a>
@@ -26,7 +28,7 @@
 
   <main id="top">
     <header class="hero wrap">
-      <div class="hero-orbit"><span class="orbit-dot"></span></div>
+      <div class="hero-orbit" aria-hidden="true"><span class="orbit-dot"></span></div>
       <div class="eyebrow">Independent builder · Open source</div>
       <h1>Building things<br>that <span class="accent">matter.</span></h1>
       <p class="hero-copy">
@@ -41,15 +43,62 @@
       <div class="hero-meta">
         <div>Currently exploring <span>Rust & desktop software</span></div>
         <div>Belief <span>Open by default</span></div>
-        <div>Based online <span>Building in public</span></div>
+        <div>Interests <span>Code · Minecraft · Tech</span></div>
       </div>
     </header>
+
+    <section class="activity-section" id="activity">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">01 / GitHub activity</div>
+            <h2>What I've been<br>working on.</h2>
+          </div>
+          <p class="section-note">A live look at my contribution history and the latest public work from GitHub.</p>
+        </div>
+
+        <div class="activity-grid">
+          <article class="activity-card graph-card reveal">
+            <div class="card-heading">
+              <div>
+                <span class="card-eyebrow">Contribution graph</span>
+                <h3>Consistency over time.</h3>
+              </div>
+              <a class="text-link" href="https://github.com/spooky8823" target="_blank" rel="noreferrer">View profile ↗</a>
+            </div>
+            <a class="graph-link" href="https://github.com/spooky8823" target="_blank" rel="noreferrer" aria-label="View Spooky's GitHub contribution graph">
+              <img
+                class="contribution-graph"
+                src="https://ghchart.rshah.org/9b7cff/spooky8823"
+                alt="GitHub contribution graph for spooky8823"
+                loading="lazy"
+              >
+            </a>
+            <p class="graph-caption">Contribution history provided by GitHub's public profile data.</p>
+          </article>
+
+          <article class="activity-card latest-card reveal">
+            <div class="card-heading">
+              <div>
+                <span class="card-eyebrow">Recent contributions</span>
+                <h3>Latest 4 public updates.</h3>
+              </div>
+              <span class="live-indicator">LIVE</span>
+            </div>
+            <div id="latest-activity" class="activity-list" aria-live="polite">
+              <p class="loading-state">Loading recent GitHub activity…</p>
+            </div>
+            <a class="text-link activity-footer" href="https://github.com/spooky8823?tab=activity" target="_blank" rel="noreferrer">See all activity ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
     <section id="about">
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">01 / A little about me</div>
+            <div class="section-kicker">02 / A little about me</div>
             <h2>Curious by default.<br>Builder by choice.</h2>
           </div>
           <p class="section-note">I like understanding how things work under the hood, then using that knowledge to make something people can actually use.</p>
@@ -82,72 +131,99 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">02 / Selected work</div>
-            <h2>Things I've been<br>putting together.</h2>
+            <div class="section-kicker">03 / Selected work</div>
+            <h2>Projects, not just<br>repository names.</h2>
           </div>
-          <p class="section-note">A few projects from my corner of GitHub. Some are evolving, some are experiments, and all of them teach me something.</p>
+          <p class="section-note">A closer look at what each project does, how it fits together, and the technologies behind it.</p>
         </div>
 
         <div class="projects">
-          <a class="project reveal" href="https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw" target="_blank" rel="noreferrer">
-            <div class="project-top"><span>01 / Developer tooling</span><span class="project-mark">↗</span></div>
+          <article class="project reveal">
+            <div class="project-top"><span>01 / Developer tooling</span><span class="project-mark">01</span></div>
             <h3>VibiClaw</h3>
-            <p>A desktop coding assistant focused on useful developer workflows, transparency, and keeping the user in control of what tools can access and do.</p>
-            <div class="project-bottom">
-              <div class="tags"><span class="tag">Desktop</span><span class="tag">Developer tools</span></div>
-              <span class="project-link">Explore project ↗</span>
+            <p>A desktop coding assistant designed to help with developer workflows while keeping permissions and user control visible. It is part of the wider Vibifiy open-source ecosystem.</p>
+            <div class="project-details">
+              <span class="detail-label">Project focus</span>
+              <p>Desktop application · Permission-aware workflows · Active development</p>
+              <span class="detail-label">Ecosystem technologies</span>
+              <div class="tags"><span class="tag">Rust</span><span class="tag">C++</span><span class="tag">Python</span><span class="tag">GTK</span></div>
+              <p class="stack-note">These are technologies documented across the Vibifiy ecosystem, not a verified per-project language breakdown.</p>
             </div>
-          </a>
+            <div class="project-bottom"><a class="project-link" href="https://github.com/spooky8823/Vibifiy/tree/main/VibiClaw" target="_blank" rel="noreferrer">Explore VibiClaw ↗</a></div>
+          </article>
 
-          <a class="project reveal" href="https://github.com/spooky8823/Vibifiy/tree/main/VibiPass" target="_blank" rel="noreferrer">
-            <div class="project-top"><span>02 / Privacy</span><span class="project-mark">↗</span></div>
+          <article class="project reveal">
+            <div class="project-top"><span>02 / Privacy software</span><span class="project-mark">02</span></div>
             <h3>VibiPass</h3>
-            <p>A privacy-focused password and secure information manager built around local encryption and keeping sensitive information under the user's control.</p>
-            <div class="project-bottom">
-              <div class="tags"><span class="tag">Privacy</span><span class="tag">Desktop</span></div>
-              <span class="project-link">Explore project ↗</span>
+            <p>A privacy-first password and secure information manager built around local encryption. The goal is to keep passwords, notes, and sensitive information under the user's control.</p>
+            <div class="project-details">
+              <span class="detail-label">Documented technologies</span>
+              <div class="tags"><span class="tag">HTML</span><span class="tag">JavaScript</span><span class="tag">CSS</span><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">GitHub Actions</span></div>
+              <span class="detail-label">Build targets</span>
+              <p>Linux · Windows · macOS</p>
             </div>
-          </a>
+            <div class="project-bottom"><a class="project-link" href="https://github.com/spooky8823/Vibifiy/tree/main/VibiPass" target="_blank" rel="noreferrer">Explore VibiPass ↗</a></div>
+          </article>
 
-          <a class="project reveal" href="https://github.com/spooky8823/Vibifiy/tree/main/Vibrium" target="_blank" rel="noreferrer">
-            <div class="project-top"><span>03 / Desktop software</span><span class="project-mark">↗</span></div>
+          <article class="project reveal">
+            <div class="project-top"><span>03 / Desktop browser</span><span class="project-mark">03</span></div>
             <h3>Vibrium</h3>
-            <p>A desktop web browser exploring what a modern, open browsing experience can look like as part of the wider Vibifiy ecosystem.</p>
-            <div class="project-bottom">
-              <div class="tags"><span class="tag">Browser</span><span class="tag">Desktop</span></div>
-              <span class="project-link">Explore project ↗</span>
+            <p>A desktop web browser concept within the Vibifiy ecosystem, exploring a modern and open browsing experience. The project is still evolving.</p>
+            <div class="project-details">
+              <span class="detail-label">Project focus</span>
+              <p>Desktop software · Web browsing · Open-source development</p>
+              <span class="detail-label">Ecosystem technologies</span>
+              <div class="tags"><span class="tag">Rust</span><span class="tag">C++</span><span class="tag">JavaScript</span><span class="tag">GTK</span></div>
+              <p class="stack-note">The parent repository documents these technologies across its projects; a dedicated Vibrium language breakdown is not yet documented.</p>
             </div>
-          </a>
+            <div class="project-bottom"><a class="project-link" href="https://github.com/spooky8823/Vibifiy/tree/main/Vibrium" target="_blank" rel="noreferrer">Explore Vibrium ↗</a></div>
+          </article>
 
-          <a class="project reveal" href="https://github.com/spooky8823/Alive-README" target="_blank" rel="noreferrer">
-            <div class="project-top"><span>04 / Web utility</span><span class="project-mark">↗</span></div>
+          <article class="project reveal">
+            <div class="project-top"><span>04 / Web utility</span><span class="project-mark">04</span></div>
             <h3>Alive README</h3>
-            <p>A small web tool that turns plain README links into custom buttons. Choose the label, colors, icon, and style, then copy the generated snippet.</p>
-            <div class="project-bottom">
-              <div class="tags"><span class="tag">JavaScript</span><span class="tag">Web</span></div>
-              <span class="project-link">Explore project ↗</span>
+            <p>A web-based button maker for README files. Customize text, colors, icons, shapes, and animations, then copy a Markdown snippet to use in a project page.</p>
+            <div class="project-details">
+              <span class="detail-label">Repository languages</span>
+              <div class="tags language-tags" data-repo-languages="Alive-README"><span class="tag">Loading languages…</span></div>
+              <span class="detail-label">Built around</span>
+              <p>JavaScript · SVG generation · Markdown · Cloudflare Workers</p>
             </div>
-          </a>
+            <div class="project-bottom"><a class="project-link" href="https://github.com/spooky8823/Alive-README" target="_blank" rel="noreferrer">Explore Alive README ↗</a></div>
+          </article>
 
-          <a class="project reveal" href="https://github.com/spooky8823/Profiles-Mod" target="_blank" rel="noreferrer">
-            <div class="project-top"><span>05 / Minecraft</span><span class="project-mark">↗</span></div>
-            <h3>Profiles Mod</h3>
-            <p>A Minecraft-related project from my experiments beyond everyday application development.</p>
-            <div class="project-bottom">
-              <div class="tags"><span class="tag">Minecraft</span><span class="tag">Modding</span></div>
-              <span class="project-link">Explore project ↗</span>
+          <article class="project project-minecraft reveal">
+            <div class="project-top"><span>05 / Minecraft modding</span><span class="project-mark">05</span></div>
+            <div class="minecraft-heading">
+              <div>
+                <h3>Profiles Mod</h3>
+                <p>A Minecraft mod project exploring profile-based gameplay or configuration ideas. The repository README does not yet describe its feature set, so I'm keeping the description deliberately open-ended.</p>
+              </div>
+              <div class="grass-block" role="img" aria-label="Pixel-art Minecraft grass block">
+                <span class="grass-top"></span><span class="grass-side"></span><span class="grass-front"></span>
+              </div>
             </div>
-          </a>
+            <div class="project-details">
+              <span class="detail-label">Repository languages</span>
+              <div class="tags language-tags" data-repo-languages="Profiles-Mod"><span class="tag">Loading languages…</span></div>
+              <span class="detail-label">Theme</span>
+              <div class="tags"><span class="tag">Minecraft</span><span class="tag">Modding</span><span class="tag">Game development</span></div>
+            </div>
+            <div class="project-bottom"><a class="project-link" href="https://github.com/spooky8823/Profiles-Mod" target="_blank" rel="noreferrer">Explore Profiles Mod ↗</a></div>
+          </article>
 
-          <a class="project reveal" href="https://github.com/spooky8823/Vibifiy" target="_blank" rel="noreferrer">
-            <div class="project-top"><span>06 / Open-source ecosystem</span><span class="project-mark">↗</span></div>
+          <article class="project reveal">
+            <div class="project-top"><span>06 / Open-source ecosystem</span><span class="project-mark">06</span></div>
             <h3>Vibifiy</h3>
-            <p>An open-source software ecosystem for developer tools, desktop apps, libraries, and utilities built in public with openness and user freedom in mind.</p>
-            <div class="project-bottom">
-              <div class="tags"><span class="tag">Open source</span><span class="tag">Rust</span></div>
-              <span class="project-link">Explore project ↗</span>
+            <p>An open-source ecosystem for desktop apps, developer tools, libraries, utilities, and automation. Its projects are developed in public with an emphasis on transparency and software freedom.</p>
+            <div class="project-details">
+              <span class="detail-label">Repository languages</span>
+              <div class="tags language-tags" data-repo-languages="Vibifiy"><span class="tag">Loading languages…</span></div>
+              <span class="detail-label">Documented ecosystem technologies</span>
+              <div class="tags"><span class="tag">Rust</span><span class="tag">C++</span><span class="tag">C</span><span class="tag">Python</span><span class="tag">Bash</span><span class="tag">Node.js</span><span class="tag">Electron</span><span class="tag">JavaScript</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">Supabase</span><span class="tag">GTK</span></div>
             </div>
-          </a>
+            <div class="project-bottom"><a class="project-link" href="https://github.com/spooky8823/Vibifiy" target="_blank" rel="noreferrer">Explore Vibifiy ↗</a></div>
+          </article>
         </div>
       </div>
     </section>
@@ -156,14 +232,14 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">03 / Tools of the trade</div>
+            <div class="section-kicker">04 / Tools of the trade</div>
             <h2>Technology I work with.</h2>
           </div>
           <p class="section-note">A practical toolkit, not a checklist. I choose technologies based on what a project needs.</p>
         </div>
 
         <div class="stack-grid">
-          <div class="stack-card reveal"><h3>Systems & languages</h3><p>Rust, C++, Python, Java, Bash</p></div>
+          <div class="stack-card reveal"><h3>Systems & languages</h3><p>Rust, C++, C, Python, Java, Bash</p></div>
           <div class="stack-card reveal"><h3>Web development</h3><p>JavaScript, Node.js, HTML, CSS</p></div>
           <div class="stack-card reveal"><h3>Desktop & UI</h3><p>GTK, Electron, Figma</p></div>
           <div class="stack-card reveal"><h3>Platforms & tools</h3><p>Linux Mint, GitHub, VS Code</p></div>
@@ -179,28 +255,16 @@
       <div class="wrap">
         <div class="section-head reveal">
           <div>
-            <div class="section-kicker">04 / How I think</div>
+            <div class="section-kicker">05 / How I think</div>
             <h2>Good software should<br>give people control.</h2>
           </div>
           <p class="section-note">The principles behind the projects matter just as much as the code that ships them.</p>
         </div>
 
         <div class="principles">
-          <article class="principle reveal">
-            <div class="num">01</div>
-            <h3>Open by default</h3>
-            <p>People should be able to inspect, understand, modify, and improve the tools they use.</p>
-          </article>
-          <article class="principle reveal">
-            <div class="num">02</div>
-            <h3>Useful over flashy</h3>
-            <p>Software should solve real problems and make workflows simpler, not add complexity for decoration.</p>
-          </article>
-          <article class="principle reveal">
-            <div class="num">03</div>
-            <h3>Privacy matters</h3>
-            <p>Users deserve transparency and meaningful control over their data and their software.</p>
-          </article>
+          <article class="principle reveal"><div class="num">01</div><h3>Open by default</h3><p>People should be able to inspect, understand, modify, and improve the tools they use.</p></article>
+          <article class="principle reveal"><div class="num">02</div><h3>Useful over flashy</h3><p>Software should solve real problems and make workflows simpler, not add complexity for decoration.</p></article>
+          <article class="principle reveal"><div class="num">03</div><h3>Privacy matters</h3><p>Users deserve transparency and meaningful control over their data and their software.</p></article>
         </div>
       </div>
     </section>
@@ -209,11 +273,18 @@
       <div class="wrap">
         <div class="contact reveal">
           <div>
-            <div class="section-kicker">05 / Find me online</div>
+            <div class="section-kicker">06 / Find me online</div>
             <h2>Have an idea? Let's build something useful.</h2>
-            <p>Explore my projects, check out the source, or follow what I'm working on.</p>
+            <p>Follow my projects, see what I'm making, or get in touch through one of my public profiles.</p>
+            <div class="social-links">
+              <a href="https://github.com/spooky8823" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
+              <a href="https://www.youtube.com/@spooky.8823" target="_blank" rel="noreferrer">YouTube <span>↗</span></a>
+              <a href="https://x.com/Spooky8823" target="_blank" rel="noreferrer">X <span>↗</span></a>
+              <a href="https://www.reddit.com/user/Spooky8823/" target="_blank" rel="noreferrer">Reddit <span>↗</span></a>
+              <a href="mailto:spookyminecraftgamer@gmail.com">Email <span>↗</span></a>
+            </div>
           </div>
-          <a class="btn btn-primary" href="https://github.com/spooky8823" target="_blank" rel="noreferrer">Visit GitHub ↗</a>
+          <a class="btn btn-primary" href="mailto:spookyminecraftgamer@gmail.com">Get in touch ↗</a>
         </div>
       </div>
     </section>
@@ -224,12 +295,12 @@
       <span>© <span id="year"></span> Spooky. Built with curiosity and code.</span>
       <div class="footer-links">
         <a href="https://github.com/spooky8823" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://github.com/spooky8823/Vibifiy" target="_blank" rel="noreferrer">Vibifiy</a>
+        <a href="https://www.youtube.com/@spooky.8823" target="_blank" rel="noreferrer">YouTube</a>
+        <a href="https://x.com/Spooky8823" target="_blank" rel="noreferrer">X</a>
+        <a href="https://www.reddit.com/user/Spooky8823/" target="_blank" rel="noreferrer">Reddit</a>
         <a href="#top">Back to top ↑</a>
       </div>
     </div>
   </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
