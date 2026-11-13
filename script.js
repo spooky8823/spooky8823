@@ -193,4 +193,74 @@ async function loadLatestCommits(repos) {
   }
 }
 
+// Render a responsive, rounded-cell contribution calendar from live public data.
+async function loadContributionGraph() {
+  const container = document.getElementById("contribution-graph");
+  if (!container) return;
+
+  try {
+    const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`);
+    if (!response.ok) throw new Error("Contribution data unavailable");
+    const payload = await response.json();
+    const days = payload.contributions || [];
+    if (!days.length) throw new Error("No contribution days returned");
+
+    const cell = 13;
+    const gap = 4;
+    const step = cell + gap;
+    const left = 38;
+    const top = 28;
+    const width = left + Math.ceil(days.length / 7) * step + 4;
+    const height = top + 7 * step + 20;
+    const firstDate = new Date(days[0].date + "T00:00:00Z");
+    const firstSundayOffset = firstDate.getUTCDay();
+    const colors = ["level-0", "level-1", "level-2", "level-3", "level-4"];
+
+    const cells = days.map((day) => {
+      const date = new Date(day.date + "T00:00:00Z");
+      const offset = Math.floor((date - firstDate) / 86400000) + firstSundayOffset;
+      const column = Math.floor(offset / 7);
+      const row = date.getUTCDay();
+      const level = Math.max(0, Math.min(4, Number(day.level) || 0));
+      const x = left + column * step;
+      const y = top + row * step;
+      const count = Number(day.count) || 0;
+      return `<rect class="contrib-cell ${colors[level]}" x="${x}" y="${y}" width="${cell}" height="${cell}" rx="3" ry="3"><title>${escapeHTML(day.date)}: ${count} contributions</title></rect>`;
+    }).join("");
+
+    const monthLabels = [];
+    let previousMonth = -1;
+    days.forEach((day) => {
+      const date = new Date(day.date + "T00:00:00Z");
+      if (date.getUTCMonth() !== previousMonth) {
+        const offset = Math.floor((date - firstDate) / 86400000) + firstSundayOffset;
+        const column = Math.floor(offset / 7);
+        monthLabels.push(`<text class="contrib-month" x="${left + column * step}" y="15">${date.toLocaleDateString("en", { month: "short", timeZone: "UTC" })}</text>`);
+        previousMonth = date.getUTCMonth();
+      }
+    });
+
+    const dayLabels = [
+      { row: 1, label: "Mon" },
+      { row: 3, label: "Wed" },
+      { row: 5, label: "Fri" }
+    ].map(({ row, label }) =>
+      `<text class="contrib-day" x="0" y="${top + row * step + 10}">${label}</text>`
+    ).join("");
+
+    const total = Number(payload.total?.lastYear) || days.reduce((sum, day) => sum + (Number(day.count) || 0), 0);
+    container.innerHTML = `
+      <svg viewBox="0 0 ${width} ${height}" role="img" aria-label="${total} GitHub contributions in the last year">
+        ${monthLabels.join("")}
+        ${dayLabels}
+        ${cells}
+      </svg>
+    `;
+    container.setAttribute("aria-label", `${total} GitHub contributions in the last year`);
+  } catch (error) {
+    container.innerHTML = '<p class="empty-state">Contribution graph is temporarily unavailable. View the live graph on GitHub.</p>';
+  }
+}
+
+loadContributionGraph();
 loadPortfolio();
