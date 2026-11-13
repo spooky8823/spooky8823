@@ -252,3 +252,44 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
   .graph-card { padding: 20px; }
   .contribution-graph { min-width: 650px; }
 }
+
+
+/* GitHub-style language composition bars and Linguist colour labels */
+.language-bar {
+  display: flex;
+  width: 100%;
+  height: 10px;
+  margin: 14px 0 13px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #30363d;
+  gap: 2px;
+}
+.language-segment { display: block; min-width: 2px; height: 100%; }
+.language-bar-empty { background: #30363d; }
+.language-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px 16px;
+  margin: 0 0 5px;
+}
+.language-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: .72rem;
+  line-height: 1.5;
+}
+.language-legend-item i {
+  width: 9px;
+  height: 9px;
+  flex: 0 0 9px;
+  border-radius: 50%;
+  background: var(--language-color);
+}
+.language-legend-item b { color: var(--text); font-weight: 600; }
+.language-legend-item small { color: var(--soft); font: .65rem var(--mono); }
+.language-empty { color: var(--soft); font-size: .72rem; }
+.stack-card-wide .language-bar { margin-top: 18px; }
+.stack-card-wide .language-legend { margin: 16px 0; }
