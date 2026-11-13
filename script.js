@@ -1,165 +1,196 @@
 const GITHUB_USER = "spooky8823";
+const API_ROOT = "https://api.github.com";
+const API_HEADERS = { Accept: "application/vnd.github+json" };
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
-// Reveal sections as they enter the viewport.
+// Reveal static and dynamically-added sections.
+let revealObserver;
 if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver((entries) => {
+  revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
-
-  document.querySelectorAll(".reveal").forEach((element) => observer.observe(element));
-} else {
-  document.querySelectorAll(".reveal").forEach((element) => element.classList.add("visible"));
 }
-
-// Load the four latest contribution-style public events from GitHub.
-// GitHub's public events API exposes a rolling window of public activity.
-async function loadRecentActivity() {
-  const container = document.getElementById("latest-activity");
-  const contributionTypes = new Set([
-    "PushEvent",
-    "PullRequestEvent",
-    "IssuesEvent",
-    "IssueCommentEvent",
-    "PullRequestReviewEvent",
-    "PullRequestReviewCommentEvent",
-    "CommitCommentEvent",
-    "ReleaseEvent"
-  ]);
-
-  try {
-    const response = await fetch(
-      `https://api.github.com/users/${GITHUB_USER}/events/public?per_page=100`,
-      { headers: { Accept: "application/vnd.github+json" } }
-    );
-
-    if (!response.ok) throw new Error("GitHub activity is temporarily unavailable.");
-
-    const events = await response.json();
-    const contributions = events
-      .filter((event) => contributionTypes.has(event.type))
-      .slice(0, 4);
-
-    if (!contributions.length) {
-      container.innerHTML = '<p class="empty-state">No recent public contributions found in GitHub’s activity feed.</p>';
-      return;
-    }
-
-    container.innerHTML = contributions.map((event) => {
-      const info = describeEvent(event);
-      const date = new Date(event.created_at);
-      const dateText = date.toLocaleDateString(undefined, { month: "short", day: "numeric" });
-      const repoName = escapeHTML(event.repo?.name || "GitHub");
-      const repoUrl = event.repo?.name
-        ? `https://github.com/${event.repo.name}`
-        : "https://github.com/" + GITHUB_USER;
-
-      return `
-        <div class="activity-item">
-          <a href="${repoUrl}" target="_blank" rel="noreferrer">
-            <div class="activity-meta"><span>${info.kind}</span><time datetime="${date.toISOString()}">${dateText}</time></div>
-            <div class="activity-title">${escapeHTML(info.title)}</div>
-            <div class="activity-repo">${repoName}</div>
-          </a>
-        </div>
-      `;
-    }).join("");
-  } catch (error) {
-    container.innerHTML = '<p class="empty-state">Recent activity could not be loaded right now. The contribution graph and GitHub profile are still available above.</p>';
-  }
+function observeReveals(root = document) {
+  root.querySelectorAll(".reveal:not(.visible)").forEach((element) => {
+    if (revealObserver) revealObserver.observe(element);
+    else element.classList.add("visible");
+  });
 }
+observeReveals();
 
-function describeEvent(event) {
-  const payload = event.payload || {};
-
-  switch (event.type) {
-    case "PushEvent": {
-      const commits = payload.commits || [];
-      const firstMessage = commits[0]?.message?.split("\n")[0];
-      const count = payload.size || commits.length || 1;
-      return {
-        kind: "PUSH",
-        title: firstMessage || `Pushed ${count} commit${count === 1 ? "" : "s"}`
-      };
-    }
-    case "PullRequestEvent":
-      return {
-        kind: "PULL REQUEST",
-        title: `${capitalize(payload.action || "updated")} pull request: ${payload.pull_request?.title || "Untitled"}`
-      };
-    case "IssuesEvent":
-      return {
-        kind: "ISSUE",
-        title: `${capitalize(payload.action || "updated")} issue: ${payload.issue?.title || "Untitled"}`
-      };
-    case "IssueCommentEvent":
-      return { kind: "COMMENT", title: "Commented on an issue" };
-    case "PullRequestReviewEvent":
-      return { kind: "REVIEW", title: `${capitalize(payload.action || "submitted")} a pull request review` };
-    case "PullRequestReviewCommentEvent":
-      return { kind: "REVIEW COMMENT", title: "Commented on a pull request review" };
-    case "CommitCommentEvent":
-      return { kind: "COMMIT COMMENT", title: "Commented on a commit" };
-    case "ReleaseEvent":
-      return { kind: "RELEASE", title: `Published release ${payload.release?.tag_name || ""}`.trim() };
-    default:
-      return { kind: "ACTIVITY", title: "Updated a GitHub project" };
-  }
-}
-
-function capitalize(value) {
-  return value.charAt(0).toUpperCase() + value.slice(1);
+async function github(path) {
+  const response = await fetch(`${API_ROOT}${path}`, { headers: API_HEADERS });
+  if (!response.ok) throw new Error(`GitHub API returned ${response.status}`);
+  return response.json();
 }
 
 function escapeHTML(value) {
-  return String(value).replace(/[&<>"']/g, (character) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#039;"
+  return String(value ?? "").replace(/[&<>"']/g, (character) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
   })[character]);
 }
 
-loadRecentActivity();
-
-// Ask GitHub for the actual language breakdown of standalone repositories.
-// The Vibifiy monorepo language data represents the whole ecosystem, not each subproject.
-async function loadRepositoryLanguages() {
-  const languageCards = document.querySelectorAll("[data-repo-languages]");
-
-  await Promise.all([...languageCards].map(async (card) => {
-    const repository = card.dataset.repoLanguages;
-
-    try {
-      const response = await fetch(
-        `https://api.github.com/repos/${GITHUB_USER}/${repository}/languages`,
-        { headers: { Accept: "application/vnd.github+json" } }
-      );
-
-      if (!response.ok) throw new Error("Language data unavailable.");
-
-      const languages = await response.json();
-      const names = Object.keys(languages);
-
-      if (!names.length) {
-        card.innerHTML = '<span class="tag">No language data yet</span>';
-        return;
-      }
-
-      card.innerHTML = names.map((name) =>
-        `<span class="tag">${escapeHTML(name)}</span>`
-      ).join("");
-    } catch (error) {
-      card.innerHTML = '<span class="tag">Language data unavailable</span>';
-    }
-  }));
+function formatDate(value) {
+  if (!value) return "Date unavailable";
+  return new Date(value).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
 }
 
-loadRepositoryLanguages();
+function repoIsMinecraft(repo) {
+  const searchable = [
+    repo.name,
+    repo.description,
+    ...(repo.topics || [])
+  ].join(" ").toLowerCase();
+  return /minecraft|fabric|forge|modrinth|spigot|paper.?mc/.test(searchable);
+}
+
+// Load actual repository metadata. Renames, new repositories, descriptions,
+// default branches and detected language stacks all come from GitHub at runtime.
+async function loadPortfolio() {
+  const projects = document.getElementById("projects-grid");
+  const stack = document.getElementById("stack-grid");
+
+  try {
+    const allRepos = await github(`/users/${GITHUB_USER}/repos?type=owner&sort=pushed&per_page=100`);
+    const repos = allRepos
+      .filter((repo) => !repo.fork && !repo.archived && !repo.private)
+      .sort((a, b) => new Date(b.pushed_at || 0) - new Date(a.pushed_at || 0));
+
+    if (!repos.length) {
+      projects.innerHTML = '<p class="empty-state">No public repositories found.</p>';
+      stack.innerHTML = "";
+      return;
+    }
+
+    // Language data is retrieved per repository, then combined for the overall stack.
+    const languageResults = await Promise.all(repos.map(async (repo) => {
+      try {
+        const languages = await github(`/repos/${GITHUB_USER}/${encodeURIComponent(repo.name)}/languages`);
+        return { repo, languages };
+      } catch {
+        return { repo, languages: {} };
+      }
+    }));
+
+    renderProjects(languageResults.slice(0, 8));
+    renderStack(languageResults);
+    await loadLatestCommits(repos.slice(0, 12));
+    observeReveals(projects);
+    observeReveals(stack);
+  } catch (error) {
+    projects.innerHTML = '<p class="empty-state">Could not load repositories from GitHub right now. Refresh the page to try again.</p>';
+    stack.innerHTML = '<p class="empty-state">Repository language data is temporarily unavailable.</p>';
+    document.getElementById("latest-activity").innerHTML =
+      '<p class="empty-state">Could not load commits. Your GitHub profile is still available from the link above.</p>';
+  }
+}
+
+function renderProjects(items) {
+  const container = document.getElementById("projects-grid");
+  container.innerHTML = items.map(({ repo, languages }, index) => {
+    const minecraft = repoIsMinecraft(repo);
+    const languageNames = Object.keys(languages);
+    const tags = languageNames.length
+      ? languageNames.map((name) => `<span class="tag">${escapeHTML(name)}</span>`).join("")
+      : '<span class="tag">No language data</span>';
+    const description = repo.description || "An open-source project. Check the repository for its current README, source code, and development details.";
+    const topics = (repo.topics || []).slice(0, 5);
+    const topicTags = topics.map((topic) => `<span class="tag topic-tag">${escapeHTML(topic)}</span>`).join("");
+    const projectClass = minecraft ? "project project-minecraft reveal" : "project reveal";
+    const minecraftArt = minecraft
+      ? '<div class="grass-block" role="img" aria-label="Pixel-art Minecraft grass block"><span class="grass-top"></span><span class="grass-side"></span><span class="grass-front"></span></div>'
+      : "";
+    const heading = minecraft
+      ? `<div class="minecraft-heading"><div><h3>${escapeHTML(repo.name)}</h3><p>${escapeHTML(description)}</p></div>${minecraftArt}</div>`
+      : `<h3>${escapeHTML(repo.name)}</h3><p>${escapeHTML(description)}</p>`;
+    const updated = formatDate(repo.pushed_at);
+    const url = repo.html_url || `https://github.com/${GITHUB_USER}/${encodeURIComponent(repo.name)}`;
+
+    return `
+      <article class="${projectClass}">
+        <div class="project-top"><span>${minecraft ? "Minecraft project" : "Public repository"}</span><span class="project-mark">${String(index + 1).padStart(2, "0")}</span></div>
+        ${heading}
+        <div class="project-details">
+          <span class="detail-label">Languages detected by GitHub</span>
+          <div class="tags language-tags">${tags}</div>
+          ${topicTags ? `<span class="detail-label">Topics</span><div class="tags">${topicTags}</div>` : ""}
+          <span class="repo-updated">Last pushed ${escapeHTML(updated)}</span>
+        </div>
+        <div class="project-bottom"><a class="project-link" href="${escapeHTML(url)}" target="_blank" rel="noreferrer">Explore repository ↗</a></div>
+      </article>
+    `;
+  }).join("");
+}
+
+function renderStack(items) {
+  const totals = {};
+  items.forEach(({ languages }) => {
+    Object.entries(languages).forEach(([name, bytes]) => {
+      totals[name] = (totals[name] || 0) + bytes;
+    });
+  });
+
+  const sorted = Object.entries(totals).sort((a, b) => b[1] - a[1]);
+  const container = document.getElementById("stack-grid");
+  if (!sorted.length) {
+    container.innerHTML = '<p class="empty-state">No language statistics are available yet.</p>';
+    return;
+  }
+
+  container.innerHTML = `
+    <article class="stack-card stack-card-wide reveal">
+      <h3>Languages across public repositories</h3>
+      <div class="tags language-tags">${sorted.map(([name]) => `<span class="tag">${escapeHTML(name)}</span>`).join("")}</div>
+      <p class="stack-caption">Automatically aggregated from GitHub's language statistics. This list changes as your repositories and code change.</p>
+    </article>
+  `;
+}
+
+async function loadLatestCommits(repos) {
+  const container = document.getElementById("latest-activity");
+  try {
+    const commitLists = await Promise.all(repos.map(async (repo) => {
+      try {
+        const commits = await github(`/repos/${GITHUB_USER}/${encodeURIComponent(repo.name)}/commits?per_page=1`);
+        return commits.map((commit) => ({ ...commit, repository: repo }));
+      } catch {
+        return [];
+      }
+    }));
+
+    const latest = commitLists.flat()
+      .sort((a, b) => new Date(b.commit?.committer?.date || b.commit?.author?.date || 0) -
+                      new Date(a.commit?.committer?.date || a.commit?.author?.date || 0))
+      .slice(0, 4);
+
+    if (!latest.length) {
+      container.innerHTML = '<p class="empty-state">No recent commits found in your public repositories.</p>';
+      return;
+    }
+
+    container.innerHTML = latest.map((item) => {
+      const message = item.commit?.message?.split("\n")[0] || "Commit";
+      const date = item.commit?.committer?.date || item.commit?.author?.date;
+      const url = item.html_url || item.repository.html_url;
+      return `
+        <article class="activity-item">
+          <a href="${escapeHTML(url)}" target="_blank" rel="noreferrer">
+            <div class="activity-meta"><span>COMMIT</span><time>${escapeHTML(formatDate(date))}</time></div>
+            <div class="activity-title">${escapeHTML(message)}</div>
+            <div class="activity-repo">${escapeHTML(item.repository.full_name || item.repository.name)}</div>
+          </a>
+        </article>
+      `;
+    }).join("");
+  } catch {
+    container.innerHTML = '<p class="empty-state">Latest commits are temporarily unavailable. Check your GitHub profile for the full history.</p>';
+  }
+}
+
+loadPortfolio();
