@@ -91,14 +91,49 @@ async function loadPortfolio() {
   }
 }
 
+// GitHub Linguist language colors for common repository languages.
+const LANGUAGE_COLORS = {
+  "Rust": "#dea584", "JavaScript": "#f1e05a", "TypeScript": "#3178c6",
+  "C++": "#f34b7d", "C": "#555555", "C#": "#178600", "CSS": "#563d7c",
+  "HTML": "#e34c26", "Python": "#3572A5", "Java": "#b07219",
+  "Shell": "#89e051", "CMake": "#DA3434", "Batchfile": "#C1F12E",
+  "Inno Setup": "#264b99", "Go": "#00ADD8", "Kotlin": "#A97BFF",
+  "Swift": "#F05138", "Ruby": "#701516", "PHP": "#4F5D95",
+  "Dart": "#00B4AB", "Lua": "#000080", "PowerShell": "#012456",
+  "Markdown": "#083fa1", "Vue": "#41b883", "Svelte": "#ff3e00",
+  "Objective-C": "#438eff", "Makefile": "#427819", "Perl": "#0298c3",
+  "R": "#198CE7", "Scala": "#c22d40", "Dockerfile": "#384d54",
+  "Jupyter Notebook": "#DA5B0B", "Assembly": "#6E4C13"
+};
+
+function languageBreakdown(languages) {
+  const entries = Object.entries(languages || {})
+    .filter(([, bytes]) => Number(bytes) > 0)
+    .sort((a, b) => b[1] - a[1]);
+  const total = entries.reduce((sum, [, bytes]) => sum + Number(bytes), 0);
+  if (!total) return { bar: '<div class="language-bar language-bar-empty"></div>', labels: '<span class="language-empty">No language data</span>' };
+
+  const segments = entries.map(([name, bytes]) => {
+    const percentage = Number(bytes) / total * 100;
+    const color = LANGUAGE_COLORS[name] || "#8b949e";
+    return { name, percentage, color };
+  });
+
+  const bar = `<div class="language-bar" role="img" aria-label="${segments.map(item => `${escapeHTML(item.name)} ${item.percentage.toFixed(1)} percent`).join(", ")}">${segments.map(item =>
+    `<span class="language-segment" style="width:${item.percentage}%;background-color:${item.color}" title="${escapeHTML(item.name)} ${item.percentage.toFixed(1)}%"></span>`
+  ).join("")}</div>`;
+
+  const labels = `<div class="language-legend">${segments.map(item =>
+    `<span class="language-legend-item"><i style="--language-color:${item.color}"></i><b>${escapeHTML(item.name)}</b><small>${item.percentage.toFixed(1)}%</small></span>`
+  ).join("")}</div>`;
+  return { bar, labels };
+}
+
 function renderProjects(items) {
   const container = document.getElementById("projects-grid");
   container.innerHTML = items.map(({ repo, languages }, index) => {
     const minecraft = repoIsMinecraft(repo);
-    const languageNames = Object.keys(languages);
-    const tags = languageNames.length
-      ? languageNames.map((name) => `<span class="tag">${escapeHTML(name)}</span>`).join("")
-      : '<span class="tag">No language data</span>';
+    const breakdown = languageBreakdown(languages);
     const description = repo.description || "An open-source project. Check the repository for its current README, source code, and development details.";
     const topics = (repo.topics || []).slice(0, 5);
     const topicTags = topics.map((topic) => `<span class="tag topic-tag">${escapeHTML(topic)}</span>`).join("");
@@ -117,8 +152,9 @@ function renderProjects(items) {
         <div class="project-top"><span>${minecraft ? "Minecraft project" : "Public repository"}</span><span class="project-mark">${String(index + 1).padStart(2, "0")}</span></div>
         ${heading}
         <div class="project-details">
-          <span class="detail-label">Languages detected by GitHub</span>
-          <div class="tags language-tags">${tags}</div>
+          <span class="detail-label">Languages</span>
+          ${breakdown.bar}
+          ${breakdown.labels}
           ${topicTags ? `<span class="detail-label">Topics</span><div class="tags">${topicTags}</div>` : ""}
           <span class="repo-updated">Last pushed ${escapeHTML(updated)}</span>
         </div>
@@ -135,19 +171,18 @@ function renderStack(items) {
       totals[name] = (totals[name] || 0) + bytes;
     });
   });
-
-  const sorted = Object.entries(totals).sort((a, b) => b[1] - a[1]);
+  const breakdown = languageBreakdown(totals);
   const container = document.getElementById("stack-grid");
-  if (!sorted.length) {
+  if (!Object.keys(totals).length) {
     container.innerHTML = '<p class="empty-state">No language statistics are available yet.</p>';
     return;
   }
-
   container.innerHTML = `
     <article class="stack-card stack-card-wide reveal">
       <h3>Languages across public repositories</h3>
-      <div class="tags language-tags">${sorted.map(([name]) => `<span class="tag">${escapeHTML(name)}</span>`).join("")}</div>
-      <p class="stack-caption">Automatically aggregated from GitHub's language statistics. This list changes as your repositories and code change.</p>
+      ${breakdown.bar}
+      ${breakdown.labels}
+      <p class="stack-caption">Language proportions are calculated from GitHub's detected source-code bytes across your public repositories.</p>
     </article>
   `;
 }
