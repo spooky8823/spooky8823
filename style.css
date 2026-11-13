@@ -219,3 +219,15 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
   *, *:before, *:after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+
+/* GitHub-driven portfolio content */
+.repo-updated { display: block; margin-top: 13px; color: var(--soft); font: .65rem var(--mono); }
+.topic-tag { color: var(--muted); }
+.stack-card-wide { grid-column: 1 / -1; }
+.stack-card-wide .tags { margin: 14px 0; }
+.stack-caption { margin-top: 12px !important; }
+#projects-grid > .loading-state, #stack-grid > .loading-state { grid-column: 1 / -1; }
+@media (max-width: 620px) {
+  .stack-card-wide { grid-column: 1 / -1; }
+}
