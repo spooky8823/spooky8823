@@ -87,7 +87,9 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.08; letter-spacing: -
 .section-note { color: var(--muted); max-width: 390px; font-size: .92rem; }
 
 .activity-section { padding-top: 78px; }
-.activity-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 16px; }
+.activity-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+.graph-card { width: 100%; }
+.latest-card { width: 100%; }
 .activity-card {
   min-width: 0; border: 1px solid var(--line); border-radius: 12px;
   background: linear-gradient(145deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
@@ -98,8 +100,14 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.08; letter-spacing: -
 .card-heading h3 { margin: 7px 0 0; font-size: 1.1rem; letter-spacing: -.04em; }
 .text-link { color: var(--purple); font-size: .78rem; font-weight: 700; white-space: nowrap; }
 .text-link:hover, .project-link:hover { color: #c5b5ff; }
-.graph-link { display: block; margin-top: 27px; overflow: hidden; }
-.contribution-graph { display: block; width: 100%; height: auto; min-height: 100px; object-fit: contain; }
+.graph-link { display: block; margin-top: 30px; overflow-x: auto; overflow-y: hidden; }
+.contribution-graph { display: block; width: 100%; min-width: 690px; }
+.contribution-graph svg { display: block; width: 100%; height: auto; overflow: visible; }
+.contribution-graph .contrib-cell { stroke: rgba(255,255,255,.035); stroke-width: 1; }
+.contribution-graph .contrib-month, .contribution-graph .contrib-day { fill: var(--soft); font: 11px var(--mono); }
+.contribution-graph .contrib-legend { fill: var(--muted); font: 10px var(--mono); }
+.graph-card { padding: 30px; }
+.graph-caption { margin-top: 18px; }
 .graph-caption { margin: 14px 0 0; color: var(--soft); font-size: .72rem; }
 .live-indicator { color: var(--mint); font: .65rem var(--mono); letter-spacing: .12em; }
 .live-indicator:before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); margin: 0 8px 1px 0; }
@@ -230,4 +238,17 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
 #projects-grid > .loading-state, #stack-grid > .loading-state { grid-column: 1 / -1; }
 @media (max-width: 620px) {
   .stack-card-wide { grid-column: 1 / -1; }
+}
+
+/* Full-width contribution calendar with rounded GitHub-green cells */
+.graph-card .card-heading h3 { font-size: 1.25rem; }
+.graph-card .graph-link { padding-bottom: 4px; }
+.contribution-graph .level-0 { fill: #292d35; }
+.contribution-graph .level-1 { fill: #0e4429; }
+.contribution-graph .level-2 { fill: #006d32; }
+.contribution-graph .level-3 { fill: #26a641; }
+.contribution-graph .level-4 { fill: #39d353; }
+@media (max-width: 620px) {
+  .graph-card { padding: 20px; }
+  .contribution-graph { min-width: 650px; }
 }
