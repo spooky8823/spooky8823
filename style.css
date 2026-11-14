@@ -417,19 +417,22 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
 .graph-legend .level-4 { background: #39d353; }
 .graph-tooltip {
   position: fixed;
+  left: 0;
+  top: 0;
   z-index: 1000;
-  padding: 6px 10px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 6px;
-  background: #1f1e29;
+  padding: 8px 12px;
+  border: 1px solid rgba(185,166,255,.2);
+  border-radius: 9px;
+  background: #242331;
   color: var(--text);
   font-size: 12px;
+  line-height: 1.4;
   white-space: nowrap;
   pointer-events: none;
   opacity: 0;
-  transform: translate(-50%, -100%);
-  transition: opacity .15s ease;
-  box-shadow: 0 8px 16px rgba(0,0,0,.5);
+  transform: none;
+  transition: opacity .12s ease;
+  box-shadow: 0 8px 22px rgba(0,0,0,.42);
 }
 .graph-tooltip.visible { opacity: 1; }
 @media (max-width: 620px) {
