@@ -250,33 +250,88 @@ async function loadCommitsForDate(dateKey, selectedCell) {
 
   const selectedDate = new Date(`${dateKey}T12:00:00`);
   const label = selectedDate.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
-  if (heading) heading.textContent = `Commits on ${label}.`;
-  container.innerHTML = '<p class="loading-state">Loading commits for this date…</p>';
+  if (heading) heading.textContent = `Activity on ${label}.`;
+  container.innerHTML = '<p class="loading-state">Loading all GitHub activity for this date…</p>';
 
-  // GitHub's commits endpoint accepts ISO-8601 UTC boundaries. Query every
-  // public repository so the selected day is not limited to the featured list.
-  const since = `${dateKey}T00:00:00Z`;
+  const queryDate = encodeURIComponent(dateKey);
   const nextDay = new Date(`${dateKey}T00:00:00Z`);
   nextDay.setUTCDate(nextDay.getUTCDate() + 1);
-  const until = nextDay.toISOString();
+  const nextDateKey = nextDay.toISOString().slice(0, 10);
 
   try {
-    const commitLists = await Promise.all(portfolioRepos.map(async (repo) => {
+    // GitHub's contribution graph includes commits, opened issues, pull
+    // requests and submitted reviews. Query each public activity type rather
+    // than treating the commits endpoint as the complete contribution list.
+    const [commitsResult, authoredResult, reviewedResult] = await Promise.all([
+      github(`/search/commits?q=author:${GITHUB_USER}+committer-date:${queryDate}.. ${encodeURIComponent(nextDateKey)}&per_page=100`.replace("%20", "")),
+      github(`/search/issues?q=author:${GITHUB_USER}+created:${queryDate}&per_page=100`),
+      github(`/search/issues?q=reviewed-by:${GITHUB_USER}+is:pr+updated:${queryDate}&per_page=100`)
+    ]);
+
+    const activities = [];
+    (commitsResult.items || []).forEach((commit) => {
+      activities.push({
+        type: "COMMIT",
+        title: commit.commit?.message?.split("\\n")[0] || "Commit",
+        date: commit.commit?.committer?.date || commit.commit?.author?.date,
+        url: commit.html_url,
+        repo: commit.repository?.full_name || ""
+      });
+    });
+
+    (authoredResult.items || []).forEach((item) => {
+      activities.push({
+        type: item.pull_request ? "PULL REQUEST" : "ISSUE",
+        title: item.title || (item.pull_request ? "Pull request" : "Issue"),
+        date: item.created_at,
+        url: item.html_url,
+        repo: item.repository_url?.split("/").slice(-2).join("/") || ""
+      });
+    });
+
+    // Search finds PRs reviewed by this account that were active on the
+    // selected date; inspect their review timestamps so unrelated updates
+    // are not displayed as reviews for this day.
+    const reviewedPulls = reviewedResult.items || [];
+    const reviewLists = await Promise.all(reviewedPulls.slice(0, 50).map(async (pull) => {
       try {
-        const commits = await github(`/repos/${GITHUB_USER}/${encodeURIComponent(repo.name)}/commits?since=${encodeURIComponent(since)}&until=${encodeURIComponent(until)}&per_page=100`);
-        return commits.map((commit) => ({ ...commit, repository: repo }));
+        const match = pull.repository_url?.match(/repos\\/(.+)$/);
+        if (!match) return [];
+        const reviews = await github(`/repos/${match[1]}/pulls/${pull.number}/reviews?per_page=100`);
+        return reviews
+          .filter((review) => review.user?.login?.toLowerCase() === GITHUB_USER.toLowerCase()
+            && review.submitted_at?.slice(0, 10) === dateKey)
+          .map((review) => ({
+            type: "PULL REQUEST REVIEW",
+            title: `Reviewed: ${pull.title || "Pull request"}`,
+            date: review.submitted_at,
+            url: review.html_url || pull.html_url,
+            repo: pull.repository_url?.split("/").slice(-2).join("/") || ""
+          }));
       } catch {
         return [];
       }
     }));
+    activities.push(...reviewLists.flat());
 
-    const dayCommits = commitLists.flat().sort((a, b) =>
-      new Date(b.commit?.committer?.date || b.commit?.author?.date || 0) -
-      new Date(a.commit?.committer?.date || a.commit?.author?.date || 0)
-    );
-    renderCommitItems(container, dayCommits, `No public repository commits found for ${label}.`);
-  } catch {
-    container.innerHTML = '<p class="empty-state">Could not load commits for this date. Please try again.</p>';
+    activities.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+    if (!activities.length) {
+      container.innerHTML = '<p class="empty-state">No public GitHub contributions were found for this date.</p>';
+      return;
+    }
+
+    container.innerHTML = activities.map((item) => `
+      <article class="activity-item">
+        <a href="${escapeHTML(item.url || "https://github.com/" + GITHUB_USER)}" target="_blank" rel="noreferrer">
+          <div class="activity-meta"><span>${escapeHTML(item.type)}</span><time>${escapeHTML(formatDate(item.date))}</time></div>
+          <div class="activity-title">${escapeHTML(item.title)}</div>
+          <div class="activity-repo">${escapeHTML(item.repo)}</div>
+        </a>
+      </article>
+    `).join("");
+  } catch (error) {
+    console.error("Could not load GitHub activity for selected date:", error);
+    container.innerHTML = '<p class="empty-state">GitHub activity could not be loaded. This is an API error, not confirmation that the day had no contributions. Please try again later.</p>';
   }
 }
 
