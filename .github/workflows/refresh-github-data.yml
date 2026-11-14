@@ -109,9 +109,10 @@ jobs:
             // what makes date selection useful beyond GitHub's short events feed.
             const commitLists = await mapLimit(publicRepos, 5, async (repo) => {
               try {
-                return await paginated(
+                const repoCommits = await paginated(
                   `/repos/${owner}/${encodeURIComponent(repo.name)}/commits?author=${encodeURIComponent(owner)}&since=${encodeURIComponent(sinceISO)}&until=${encodeURIComponent(untilISO)}`
                 );
+                return repoCommits.map((commit) => ({ ...commit, __repo: repo.full_name }));
               } catch (error) {
                 console.warn(`Could not load commits for ${repo.name}:`, error.message);
                 return [];
