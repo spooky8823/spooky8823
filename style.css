@@ -611,3 +611,44 @@ img, svg, video, canvas {
     padding: 14px;
   }
 }
+
+
+/* Full-width hero action with branded social buttons */
+.hero-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  width: min(100%, 610px);
+  gap: 12px;
+}
+.hero-work-btn { width: 100%; min-height: 54px; }
+.hero-socials {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 9px;
+}
+.hero-social {
+  min-width: 0;
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: .78rem;
+  font-weight: 700;
+  transition: transform .2s, filter .2s, border-color .2s;
+}
+.hero-social:hover { transform: translateY(-3px); filter: brightness(1.12); }
+.hero-social svg { width: 19px; height: 19px; flex: 0 0 19px; }
+.social-x { color: #fff; background: #050505; border-color: #343434; }
+.social-github { color: #fff; background: #171717; border-color: #3b3b3b; }
+.social-youtube { color: #fff; background: #e62117; border-color: #e62117; }
+.social-reddit { color: #fff; background: #ff4500; border-color: #ff4500; }
+.social-email { color: #fff; background: #6654d9; border-color: #806fff; }
+@media (max-width: 420px) {
+  .hero-socials { gap: 6px; }
+  .hero-social { min-height: 50px; flex-direction: column; gap: 3px; padding: 7px 2px; font-size: .62rem; }
+  .hero-social svg { width: 18px; height: 18px; flex-basis: 18px; }
+}
