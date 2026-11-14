@@ -350,10 +350,9 @@ async function loadContributionGraph() {
         cell.setAttribute("tabindex", "0");
         cell.setAttribute("role", "button");
         cell.setAttribute("aria-pressed", "false");
-        cell.setAttribute("aria-label", `${message}. Select to view commits from this date.`);
         const formattedDate = date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
         const message = `${count} contribution${count === 1 ? "" : "s"} on ${formattedDate}`;
-        cell.setAttribute("aria-label", message);
+        cell.setAttribute("aria-label", `${message}. Select to view commits from this date.`);
         // Keep the accessible label, but omit the native title tooltip.
         const positionTooltip = (pointerEvent) => {
           if (!tooltipEl) return;
