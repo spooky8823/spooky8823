@@ -236,6 +236,12 @@ async function loadContributionGraph() {
   const tooltipEl = document.getElementById("graph-tooltip");
   if (!container || !gridEl || !monthsEl) return;
 
+  // Keep the fixed tooltip outside animated/reveal sections. A transformed
+  // ancestor changes the containing block for position: fixed and offsets it.
+  if (tooltipEl && tooltipEl.parentElement !== document.body) {
+    document.body.appendChild(tooltipEl);
+  }
+
   try {
     const response = await fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USER}?y=last`);
     if (!response.ok) throw new Error("Contribution data unavailable");
