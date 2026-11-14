@@ -1,6 +1,7 @@
 const GITHUB_USER = "spooky8823";
 const API_ROOT = "https://api.github.com";
 const API_HEADERS = { Accept: "application/vnd.github+json" };
+let portfolioRepos = [];
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -78,9 +79,10 @@ async function loadPortfolio() {
       }
     }));
 
+    portfolioRepos = repos;
     renderProjects(languageResults.slice(0, 8));
     renderStack(languageResults);
-    await loadLatestCommits(repos.slice(0, 12));
+    await loadLatestCommits(repos);
     observeReveals(projects);
     observeReveals(stack);
   } catch (error) {
@@ -187,8 +189,31 @@ function renderStack(items) {
   `;
 }
 
+function renderCommitItems(container, commits, emptyMessage) {
+  if (!commits.length) {
+    container.innerHTML = `<p class="empty-state">${escapeHTML(emptyMessage)}</p>`;
+    return;
+  }
+
+  container.innerHTML = commits.map((item) => {
+    const message = item.commit?.message?.split("\n")[0] || "Commit";
+    const date = item.commit?.committer?.date || item.commit?.author?.date;
+    const url = item.html_url || item.repository?.html_url || "#";
+    return `
+      <article class="activity-item">
+        <a href="${escapeHTML(url)}" target="_blank" rel="noreferrer">
+          <div class="activity-meta"><span>COMMIT</span><time>${escapeHTML(formatDate(date))}</time></div>
+          <div class="activity-title">${escapeHTML(message)}</div>
+          <div class="activity-repo">${escapeHTML(item.repository?.full_name || item.repository?.name || "")}</div>
+        </a>
+      </article>
+    `;
+  }).join("");
+}
+
 async function loadLatestCommits(repos) {
   const container = document.getElementById("latest-activity");
+  const heading = document.getElementById("activity-heading");
   try {
     const commitLists = await Promise.all(repos.map(async (repo) => {
       try {
@@ -204,27 +229,54 @@ async function loadLatestCommits(repos) {
                       new Date(a.commit?.committer?.date || a.commit?.author?.date || 0))
       .slice(0, 4);
 
-    if (!latest.length) {
-      container.innerHTML = '<p class="empty-state">No recent commits found in your public repositories.</p>';
-      return;
-    }
-
-    container.innerHTML = latest.map((item) => {
-      const message = item.commit?.message?.split("\n")[0] || "Commit";
-      const date = item.commit?.committer?.date || item.commit?.author?.date;
-      const url = item.html_url || item.repository.html_url;
-      return `
-        <article class="activity-item">
-          <a href="${escapeHTML(url)}" target="_blank" rel="noreferrer">
-            <div class="activity-meta"><span>COMMIT</span><time>${escapeHTML(formatDate(date))}</time></div>
-            <div class="activity-title">${escapeHTML(message)}</div>
-            <div class="activity-repo">${escapeHTML(item.repository.full_name || item.repository.name)}</div>
-          </a>
-        </article>
-      `;
-    }).join("");
+    if (heading) heading.textContent = "Latest 4 commits.";
+    renderCommitItems(container, latest, "No recent commits found in your public repositories.");
   } catch {
     container.innerHTML = '<p class="empty-state">Latest commits are temporarily unavailable. Check your GitHub profile for the full history.</p>';
+  }
+}
+
+async function loadCommitsForDate(dateKey, selectedCell) {
+  const container = document.getElementById("latest-activity");
+  const heading = document.getElementById("activity-heading");
+  if (!container) return;
+
+  document.querySelectorAll("#grid-cells .cell[aria-pressed='true']").forEach((cell) => {
+    cell.setAttribute("aria-pressed", "false");
+    cell.classList.remove("selected");
+  });
+  selectedCell?.setAttribute("aria-pressed", "true");
+  selectedCell?.classList.add("selected");
+
+  const selectedDate = new Date(`${dateKey}T12:00:00`);
+  const label = selectedDate.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  if (heading) heading.textContent = `Commits on ${label}.`;
+  container.innerHTML = '<p class="loading-state">Loading commits for this date…</p>';
+
+  // GitHub's commits endpoint accepts ISO-8601 UTC boundaries. Query every
+  // public repository so the selected day is not limited to the featured list.
+  const since = `${dateKey}T00:00:00Z`;
+  const nextDay = new Date(`${dateKey}T00:00:00Z`);
+  nextDay.setUTCDate(nextDay.getUTCDate() + 1);
+  const until = nextDay.toISOString();
+
+  try {
+    const commitLists = await Promise.all(portfolioRepos.map(async (repo) => {
+      try {
+        const commits = await github(`/repos/${GITHUB_USER}/${encodeURIComponent(repo.name)}/commits?since=${encodeURIComponent(since)}&until=${encodeURIComponent(until)}&per_page=100`);
+        return commits.map((commit) => ({ ...commit, repository: repo }));
+      } catch {
+        return [];
+      }
+    }));
+
+    const dayCommits = commitLists.flat().sort((a, b) =>
+      new Date(b.commit?.committer?.date || b.commit?.author?.date || 0) -
+      new Date(a.commit?.committer?.date || a.commit?.author?.date || 0)
+    );
+    renderCommitItems(container, dayCommits, `No public repository commits found for ${label}.`);
+  } catch {
+    container.innerHTML = '<p class="empty-state">Could not load commits for this date. Please try again.</p>';
   }
 }
 
@@ -296,7 +348,9 @@ async function loadContributionGraph() {
         cell.className = "cell";
         cell.dataset.level = String(level);
         cell.setAttribute("tabindex", "0");
-        cell.setAttribute("role", "img");
+        cell.setAttribute("role", "button");
+        cell.setAttribute("aria-pressed", "false");
+        cell.setAttribute("aria-label", `${message}. Select to view commits from this date.`);
         const formattedDate = date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
         const message = `${count} contribution${count === 1 ? "" : "s"} on ${formattedDate}`;
         cell.setAttribute("aria-label", message);
@@ -320,6 +374,13 @@ async function loadContributionGraph() {
           tooltipEl.style.top = `${Math.max(10, top)}px`;
         };
         const hideTooltip = () => tooltipEl?.classList.remove("visible");
+        cell.addEventListener("click", () => loadCommitsForDate(dateKey, cell));
+        cell.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            loadCommitsForDate(dateKey, cell);
+          }
+        });
         cell.addEventListener("mouseenter", positionTooltip);
         cell.addEventListener("mousemove", positionTooltip);
         cell.addEventListener("focus", () => positionTooltip());
