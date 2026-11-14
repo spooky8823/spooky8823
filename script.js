@@ -263,7 +263,7 @@ async function loadCommitsForDate(dateKey, selectedCell) {
     // requests and submitted reviews. Query each public activity type rather
     // than treating the commits endpoint as the complete contribution list.
     const [commitsResult, authoredResult, reviewedResult] = await Promise.all([
-      github(`/search/commits?q=author:${GITHUB_USER}+committer-date:${queryDate}.. ${encodeURIComponent(nextDateKey)}&per_page=100`.replace("%20", "")),
+      github(`/search/commits?q=${encodeURIComponent(`author:${GITHUB_USER} committer-date:${dateKey}..${dateKey}`)}&per_page=100`),
       github(`/search/issues?q=author:${GITHUB_USER}+created:${queryDate}&per_page=100`),
       github(`/search/issues?q=reviewed-by:${GITHUB_USER}+is:pr+updated:${queryDate}&per_page=100`)
     ]);
