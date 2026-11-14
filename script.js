@@ -272,7 +272,7 @@ async function loadCommitsForDate(dateKey, selectedCell) {
     (commitsResult.items || []).forEach((commit) => {
       activities.push({
         type: "COMMIT",
-        title: commit.commit?.message?.split("\\n")[0] || "Commit",
+        title: commit.commit?.message?.split("\n")[0] || "Commit",
         date: commit.commit?.committer?.date || commit.commit?.author?.date,
         url: commit.html_url,
         repo: commit.repository?.full_name || ""
@@ -295,7 +295,7 @@ async function loadCommitsForDate(dateKey, selectedCell) {
     const reviewedPulls = reviewedResult.items || [];
     const reviewLists = await Promise.all(reviewedPulls.slice(0, 50).map(async (pull) => {
       try {
-        const match = pull.repository_url?.match(/repos\\/(.+)$/);
+        const match = pull.repository_url?.match(/repos\/(.+)$/);
         if (!match) return [];
         const reviews = await github(`/repos/${match[1]}/pulls/${pull.number}/reviews?per_page=100`);
         return reviews
