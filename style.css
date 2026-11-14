@@ -101,7 +101,7 @@ h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.08; letter-spacing: -
 .text-link { color: var(--purple); font-size: .78rem; font-weight: 700; white-space: nowrap; }
 .text-link:hover, .project-link:hover { color: #c5b5ff; }
 .graph-link { display: block; margin-top: 30px; overflow-x: auto; overflow-y: hidden; }
-.contribution-graph { display: block; width: 100%; min-width: 690px; }
+.contribution-graph { display: block; width: 100%; min-width: 0; }
 .contribution-graph svg { display: block; width: 100%; height: auto; overflow: visible; }
 .contribution-graph .contrib-cell { stroke: rgba(255,255,255,.035); stroke-width: 1; }
 .contribution-graph .contrib-month, .contribution-graph .contrib-day { fill: var(--soft); font: 11px var(--mono); }
@@ -250,7 +250,6 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
 .contribution-graph .level-4 { fill: #39d353; }
 @media (max-width: 620px) {
   .graph-card { padding: 20px; }
-  .contribution-graph { min-width: 650px; }
 }
 
 
@@ -456,4 +455,159 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
   .graph-card { padding: 20px; }
   .graph-container { min-width: 860px; }
   .graph-footer { align-items: flex-start; }
+}
+
+
+/* Mobile layout hardening: keep wide content inside its own scroll area. */
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+img, svg, video, canvas {
+  max-width: 100%;
+}
+.wrap {
+  width: calc(100% - 48px);
+  max-width: var(--width);
+}
+.activity-grid,
+.activity-card,
+.graph-card,
+.latest-card,
+.activity-list,
+.projects,
+.project,
+.stack-grid,
+.stack-card,
+.about-grid,
+.about-text,
+.about-aside,
+.contact {
+  min-width: 0;
+}
+.graph-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.graph-container {
+  width: max(100%, 860px);
+}
+.activity-list {
+  max-height: 460px;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(129,140,248,.55) rgba(255,255,255,.06);
+  padding-right: 8px;
+}
+.activity-list::-webkit-scrollbar,
+.graph-wrapper::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+.activity-list::-webkit-scrollbar-thumb,
+.graph-wrapper::-webkit-scrollbar-thumb {
+  background: rgba(129,140,248,.55);
+  border-radius: 99px;
+}
+.activity-list::-webkit-scrollbar-track,
+.graph-wrapper::-webkit-scrollbar-track {
+  background: rgba(255,255,255,.06);
+  border-radius: 99px;
+}
+
+@media (max-width: 620px) {
+  .wrap {
+    width: calc(100% - 32px);
+  }
+  nav {
+    min-width: 0;
+    gap: 12px;
+  }
+  .nav-links {
+    min-width: 0;
+    gap: 10px;
+    font-size: .7rem;
+  }
+  .nav-cta {
+    padding: 8px 10px;
+  }
+  .hero {
+    min-height: 0;
+    padding: 190px 0 64px;
+  }
+  .hero-orbit.pfp-orbit {
+    top: 22px;
+    right: 2px;
+  }
+  h1 {
+    font-size: clamp(2.8rem, 13.5vw, 4.2rem);
+    overflow-wrap: anywhere;
+  }
+  .hero-copy {
+    font-size: .98rem;
+  }
+  .hero-meta {
+    display: grid;
+    gap: 12px;
+    line-height: 1.8;
+  }
+  .section-head {
+    min-width: 0;
+  }
+  .activity-card,
+  .graph-card {
+    padding: 17px;
+  }
+  .card-heading {
+    align-items: flex-start;
+  }
+  .card-heading h3 {
+    font-size: 1rem;
+  }
+  .graph-container {
+    min-width: 860px;
+  }
+  .graph-footer {
+    gap: 10px;
+  }
+  .graph-caption {
+    max-width: 100%;
+  }
+  .activity-list {
+    max-height: 390px;
+  }
+  .activity-meta {
+    flex-wrap: wrap;
+  }
+  .focus-item {
+    align-items: flex-start;
+  }
+  .focus-item span:first-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .contact {
+    padding: 22px;
+  }
+}
+@media (max-width: 360px) {
+  .wrap {
+    width: calc(100% - 26px);
+  }
+  .brand {
+    font-size: 1rem;
+  }
+  .nav-links {
+    gap: 8px;
+    font-size: .66rem;
+  }
+  .nav-cta {
+    padding: 7px 8px;
+  }
+  .activity-card,
+  .graph-card {
+    padding: 14px;
+  }
 }
