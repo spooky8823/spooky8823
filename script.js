@@ -284,19 +284,29 @@ async function loadContributionGraph() {
         const formattedDate = date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
         const message = `${count} contribution${count === 1 ? "" : "s"} on ${formattedDate}`;
         cell.setAttribute("aria-label", message);
-        cell.title = message;
-
-        const showTooltip = () => {
+        // Keep the accessible label, but omit the native title tooltip.
+        const positionTooltip = (pointerEvent) => {
           if (!tooltipEl) return;
           const rect = cell.getBoundingClientRect();
+          const x = pointerEvent?.clientX ?? (rect.left + rect.width / 2);
+          const y = pointerEvent?.clientY ?? (rect.top + rect.height / 2);
           tooltipEl.textContent = message;
-          tooltipEl.style.left = `${rect.left + rect.width / 2}px`;
-          tooltipEl.style.top = `${rect.top - 9}px`;
           tooltipEl.classList.add("visible");
+          tooltipEl.style.left = "0px";
+          tooltipEl.style.top = "0px";
+          const tipRect = tooltipEl.getBoundingClientRect();
+          const gap = 14;
+          let left = x + gap;
+          let top = y + gap;
+          if (left + tipRect.width > window.innerWidth - 10) left = x - tipRect.width - gap;
+          if (top + tipRect.height > window.innerHeight - 10) top = y - tipRect.height - gap;
+          tooltipEl.style.left = `${Math.max(10, left)}px`;
+          tooltipEl.style.top = `${Math.max(10, top)}px`;
         };
         const hideTooltip = () => tooltipEl?.classList.remove("visible");
-        cell.addEventListener("mouseenter", showTooltip);
-        cell.addEventListener("focus", showTooltip);
+        cell.addEventListener("mouseenter", positionTooltip);
+        cell.addEventListener("mousemove", positionTooltip);
+        cell.addEventListener("focus", () => positionTooltip());
         cell.addEventListener("mouseleave", hideTooltip);
         cell.addEventListener("blur", hideTooltip);
         gridEl.appendChild(cell);
