@@ -359,7 +359,11 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
 .months-row {
   grid-column: 2;
   display: grid;
-  grid-template-columns: repeat(53, 1fr);
+  /* Match the contribution cells' exact 12px columns and 4px gaps.
+     Fractional columns stretched the month labels across the card. */
+  grid-template-columns: repeat(53, 12px);
+  column-gap: 4px;
+  width: max-content;
   color: var(--soft);
   font: 11px var(--mono);
 }
