@@ -401,6 +401,11 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
   cursor: pointer;
   transition: transform .12s ease, outline .12s ease;
 }
+.grid-cells .cell.selected, .grid-cells .cell[aria-pressed="true"] {
+  outline: 2px solid var(--accent, #818cf8);
+  outline-offset: 2px;
+  transform: scale(1.12);
+}
 .grid-cells .cell:hover, .grid-cells .cell:focus-visible {
   transform: scale(1.25);
   outline: 1px solid rgba(255,255,255,.45);
