@@ -424,13 +424,21 @@ async function loadContributionGraph() {
       }
     }
 
-    // Keep the newest weeks (right edge) in view whenever the graph
-    // overflows its wrapper, especially on narrow screens.
+    // Start at the newest weeks (right edge), not the oldest weeks.
+    // Wait for the grid's layout to settle before reading scrollWidth;
+    // on mobile the first animation frame can run before the wide grid
+    // has its final dimensions.
     const graphWrapper = gridEl.closest(".graph-wrapper");
     if (graphWrapper) {
+      const scrollToLatest = () => {
+        const maxScroll = Math.max(0, graphWrapper.scrollWidth - graphWrapper.clientWidth);
+        graphWrapper.scrollTo({ left: maxScroll, behavior: "instant" });
+      };
       requestAnimationFrame(() => {
-        graphWrapper.scrollLeft = graphWrapper.scrollWidth;
+        requestAnimationFrame(scrollToLatest);
       });
+      // A second pass covers late font/layout sizing on mobile browsers.
+      setTimeout(scrollToLatest, 120);
     }
 
     const total = Number(payload.total?.lastYear) || contributions.reduce((sum, day) => sum + (Number(day.count) || 0), 0);
