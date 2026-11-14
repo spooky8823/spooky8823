@@ -348,10 +348,18 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
 .graph-card { padding: 28px 32px; border-radius: 16px; }
 .graph-link { display: block; }
 .contribution-graph { width: 100%; }
-.graph-wrapper { overflow-x: auto; padding: 4px 0 8px; }
+.graph-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  padding: 4px 0 10px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(129,140,248,.55) rgba(255,255,255,.06);
+}
 .graph-container {
-  display: inline-grid;
-  grid-template-columns: 36px auto;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 36px minmax(0, 1fr);
   grid-template-rows: 22px auto;
   gap: 6px;
   min-width: 860px;
@@ -359,11 +367,9 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
 .months-row {
   grid-column: 2;
   display: grid;
-  /* Match the contribution cells' exact 12px columns and 4px gaps.
-     Fractional columns stretched the month labels across the card. */
-  grid-template-columns: repeat(53, 12px);
+  grid-template-columns: repeat(53, minmax(12px, 1fr));
   column-gap: 4px;
-  width: max-content;
+  width: 100%;
   color: var(--soft);
   font: 11px var(--mono);
 }
@@ -380,12 +386,14 @@ footer { padding: 28px 0 38px; color: var(--soft); font: .7rem var(--mono); }
   grid-column: 2;
   grid-row: 2;
   display: grid;
+  width: 100%;
+  grid-template-columns: repeat(53, minmax(12px, 1fr));
   grid-template-rows: repeat(7, 12px);
   grid-auto-flow: column;
-  grid-auto-columns: 12px;
   gap: 4px;
 }
 .grid-cells .cell {
+  justify-self: center;
   width: 12px;
   height: 12px;
   border-radius: 3px;
