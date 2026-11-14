@@ -329,6 +329,15 @@ async function loadContributionGraph() {
       }
     }
 
+    // Keep the newest weeks (right edge) in view whenever the graph
+    // overflows its wrapper, especially on narrow screens.
+    const graphWrapper = gridEl.closest(".graph-wrapper");
+    if (graphWrapper) {
+      requestAnimationFrame(() => {
+        graphWrapper.scrollLeft = graphWrapper.scrollWidth;
+      });
+    }
+
     const total = Number(payload.total?.lastYear) || contributions.reduce((sum, day) => sum + (Number(day.count) || 0), 0);
     container.setAttribute("aria-label", `${total} GitHub contributions in the last year`);
   } catch (error) {
