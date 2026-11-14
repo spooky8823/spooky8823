@@ -3,6 +3,7 @@ const API_ROOT = "https://api.github.com";
 const API_HEADERS = { Accept: "application/vnd.github+json" };
 let portfolioRepos = [];
 let githubEvents = [];
+let githubCommits = [];
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -60,53 +61,33 @@ async function loadPortfolio() {
   const activity = document.getElementById("latest-activity");
 
   try {
-    // Keep the public API request count low. Fetch repository metadata once,
-    // then fetch language breakdowns only for the eight repositories shown.
-    const [allRepos, eventsResult] = await Promise.all([
-      github(`/users/${GITHUB_USER}/repos?type=owner&sort=pushed&per_page=100`),
-      github(`/users/${GITHUB_USER}/events/public?per_page=100`).catch((error) => {
-        console.warn("GitHub public events could not be loaded:", error);
-        return [];
-      })
-    ]);
+    // The scheduled GitHub Actions workflow publishes a static snapshot.
+    // Browsers no longer call api.github.com directly, avoiding shared-IP
+    // unauthenticated rate limits for visitors.
+    const response = await fetch("./data/github-data.json", { cache: "no-store" });
+    if (!response.ok) throw new Error(`Portfolio data returned ${response.status}`);
+    const data = await response.json();
 
-    const repos = allRepos
-      .filter((repo) => !repo.fork && !repo.archived && !repo.private)
-      .sort((a, b) => new Date(b.pushed_at || 0) - new Date(a.pushed_at || 0));
+    const languageResults = Array.isArray(data.repositories) ? data.repositories : [];
+    portfolioRepos = languageResults.map((item) => item.repo);
+    githubEvents = Array.isArray(data.events) ? data.events : [];
+    githubCommits = Array.isArray(data.commits) ? data.commits : [];
 
-    githubEvents = Array.isArray(eventsResult) ? eventsResult : [];
-    portfolioRepos = repos;
-
-    if (!repos.length) {
-      projects.innerHTML = '<p class="empty-state">No public repositories found.</p>';
+    if (!languageResults.length) {
+      projects.innerHTML = '<p class="empty-state">Repository data is being prepared. Please refresh in a few minutes.</p>';
       stack.innerHTML = "";
-      await loadLatestCommits();
-      return;
+    } else {
+      renderProjects(languageResults);
+      renderStack(languageResults);
+      observeReveals(projects);
+      observeReveals(stack);
     }
-
-    const featuredRepos = repos.slice(0, 8);
-    const languageResults = await Promise.all(featuredRepos.map(async (repo) => {
-      try {
-        const languages = await github(`/repos/${GITHUB_USER}/${encodeURIComponent(repo.name)}/languages`);
-        return { repo, languages };
-      } catch (error) {
-        console.warn(`Language data unavailable for ${repo.name}:`, error);
-        return { repo, languages: {} };
-      }
-    }));
-
-    renderProjects(languageResults);
-    renderStack(languageResults);
     await loadLatestCommits();
-    observeReveals(projects);
-    observeReveals(stack);
   } catch (error) {
-    console.error("Could not load GitHub repositories:", error);
-    projects.innerHTML = '<p class="empty-state">GitHub repository data is temporarily unavailable. Please try again later.</p>';
+    console.error("Could not load the published GitHub data:", error);
+    projects.innerHTML = '<p class="empty-state">GitHub data is temporarily unavailable. The site will update when its scheduled data refresh succeeds.</p>';
     stack.innerHTML = '<p class="empty-state">Repository language data is temporarily unavailable.</p>';
-    if (activity) {
-      activity.innerHTML = '<p class="empty-state">GitHub activity is temporarily unavailable. Your public profile is still available from the link above.</p>';
-    }
+    if (activity) activity.innerHTML = '<p class="empty-state">GitHub activity data is temporarily unavailable. Please try again after the next data refresh.</p>';
   }
 }
 // GitHub Linguist language colors for common repository languages.
@@ -212,21 +193,21 @@ function renderCommitItems(container, commits, emptyMessage) {
   }
 
   container.innerHTML = commits.map((item) => {
-    const message = item.commit?.message?.split("\n")[0] || "Commit";
-    const date = item.commit?.committer?.date || item.commit?.author?.date;
-    const url = item.html_url || item.repository?.html_url || "#";
+    const message = item.message || item.commit?.message?.split("\n")[0] || "Commit";
+    const date = item.date || item.commit?.committer?.date || item.commit?.author?.date;
+    const url = item.url || item.html_url || item.repository?.html_url || "#";
+    const repo = item.repo || item.repository?.full_name || item.repository?.name || "";
     return `
       <article class="activity-item">
         <a href="${escapeHTML(url)}" target="_blank" rel="noreferrer">
           <div class="activity-meta"><span>COMMIT</span><time>${escapeHTML(formatDate(date))}</time></div>
           <div class="activity-title">${escapeHTML(message)}</div>
-          <div class="activity-repo">${escapeHTML(item.repository?.full_name || item.repository?.name || "")}</div>
+          <div class="activity-repo">${escapeHTML(repo)}</div>
         </a>
       </article>
     `;
   }).join("");
 }
-
 function eventCommitItems(events) {
   return events
     .filter((event) => event.type === "PushEvent")
@@ -251,27 +232,11 @@ async function loadLatestCommits() {
   const heading = document.getElementById("activity-heading");
   if (!container) return;
 
-  const latest = eventCommitItems(githubEvents).slice(0, 4);
+  const latest = [...githubCommits]
+    .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+    .slice(0, 4);
   if (heading) heading.textContent = "Latest 4 commits.";
-
-  if (latest.length) {
-    renderCommitItems(container, latest, "No recent public commits found.");
-    return;
-  }
-
-  // The public events feed can be empty for accounts with no recent public
-  // pushes. Use one search request as a fallback instead of one request per repo.
-  try {
-    const result = await github(`/search/commits?q=${encodeURIComponent(`author:${GITHUB_USER}`)}&sort=committer-date&order=desc&per_page=4`);
-    const commits = (result.items || []).map((commit) => ({
-      ...commit,
-      repository: commit.repository || { full_name: "" }
-    }));
-    renderCommitItems(container, commits, "No recent public commits found.");
-  } catch (error) {
-    console.warn("Latest commits could not be loaded:", error);
-    container.innerHTML = '<p class="empty-state">Recent commits are temporarily unavailable. View the full public history on GitHub.</p>';
-  }
+  renderCommitItems(container, latest, "No recent public commits were found in the latest repository snapshot.");
 }
 async function loadCommitsForDate(dateKey, selectedCell) {
   const container = document.getElementById("latest-activity");
@@ -288,94 +253,51 @@ async function loadCommitsForDate(dateKey, selectedCell) {
   const selectedDate = new Date(`${dateKey}T12:00:00`);
   const label = selectedDate.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
   if (heading) heading.textContent = `Activity on ${label}.`;
-  container.innerHTML = '<p class="loading-state">Loading GitHub activity for this date…</p>';
 
-  const dayEvents = githubEvents.filter((event) => event.created_at?.slice(0, 10) === dateKey);
-  const activities = [];
+  const activities = githubCommits
+    .filter((commit) => commit.date?.slice(0, 10) === dateKey)
+    .map((commit) => ({
+      type: "COMMIT",
+      title: commit.message || "Commit",
+      date: commit.date,
+      url: commit.url,
+      repo: commit.repo || ""
+    }));
 
-  dayEvents.forEach((event) => {
-    const repo = event.repo?.name || "";
-    const repoUrl = repo ? `https://github.com/${repo}` : `https://github.com/${GITHUB_USER}`;
+  githubEvents
+    .filter((event) => event.created_at?.slice(0, 10) === dateKey)
+    .forEach((event) => {
+      const repo = event.repo?.name || "";
+      const repoUrl = repo ? `https://github.com/${repo}` : `https://github.com/${GITHUB_USER}`;
 
-    if (event.type === "PushEvent") {
-      (event.payload?.commits || []).forEach((commit) => {
-        activities.push({
-          type: "COMMIT",
-          title: commit.message?.split("\\n")[0] || "Commit",
-          date: event.created_at,
-          url: commit.sha ? `${repoUrl}/commit/${commit.sha}` : repoUrl,
-          repo
+      if (event.type === "PushEvent") {
+        (event.payload?.commits || []).forEach((commit) => {
+          const url = commit.sha ? `${repoUrl}/commit/${commit.sha}` : repoUrl;
+          if (!activities.some((item) => item.url === url)) {
+            activities.push({
+              type: "COMMIT",
+              title: commit.message?.split("\n")[0] || "Commit",
+              date: event.created_at,
+              url,
+              repo
+            });
+          }
         });
-      });
-    } else if (event.type === "IssuesEvent" && event.payload?.action === "opened") {
-      const issue = event.payload.issue;
-      activities.push({
-        type: "ISSUE",
-        title: issue?.title || "Opened an issue",
-        date: event.created_at,
-        url: issue?.html_url || repoUrl,
-        repo
-      });
-    } else if (event.type === "PullRequestEvent" && event.payload?.action === "opened") {
-      const pull = event.payload.pull_request;
-      activities.push({
-        type: "PULL REQUEST",
-        title: pull?.title || "Opened a pull request",
-        date: event.created_at,
-        url: pull?.html_url || repoUrl,
-        repo
-      });
-    } else if (event.type === "PullRequestReviewEvent") {
-      const pull = event.payload?.pull_request;
-      activities.push({
-        type: "PULL REQUEST REVIEW",
-        title: `Reviewed: ${pull?.title || "Pull request"}`,
-        date: event.created_at,
-        url: pull?.html_url || repoUrl,
-        repo
-      });
-    }
-  });
-
-  // The public events endpoint exposes recent activity (roughly the last
-  // 90 days). For older dates, fall back to GitHub's date-scoped search APIs.
-  const oldestEventDate = githubEvents
-    .map((event) => event.created_at?.slice(0, 10))
-    .filter(Boolean)
-    .sort()[0];
-
-  if (oldestEventDate && dateKey < oldestEventDate) {
-    try {
-      const [commitsResult, authoredResult] = await Promise.all([
-        github(`/search/commits?q=${encodeURIComponent(`author:${GITHUB_USER} committer-date:${dateKey}..${dateKey}`)}&per_page=100`),
-        github(`/search/issues?q=${encodeURIComponent(`author:${GITHUB_USER} created:${dateKey}`)}&per_page=100`)
-      ]);
-
-      (commitsResult.items || []).forEach((commit) => activities.push({
-        type: "COMMIT",
-        title: commit.commit?.message?.split("\\n")[0] || "Commit",
-        date: commit.commit?.committer?.date || commit.commit?.author?.date,
-        url: commit.html_url,
-        repo: commit.repository?.full_name || ""
-      }));
-
-      (authoredResult.items || []).forEach((item) => activities.push({
-        type: item.pull_request ? "PULL REQUEST" : "ISSUE",
-        title: item.title || "Contribution",
-        date: item.created_at,
-        url: item.html_url,
-        repo: item.repository_url?.split("/").slice(-2).join("/") || ""
-      }));
-    } catch (error) {
-      console.error("Could not search older GitHub activity:", error);
-      container.innerHTML = '<p class="empty-state">GitHub could not retrieve activity for this older date. This does not mean there were no contributions.</p>';
-      return;
-    }
-  }
+      } else if (event.type === "IssuesEvent" && event.payload?.action === "opened") {
+        const issue = event.payload.issue;
+        activities.push({ type: "ISSUE", title: issue?.title || "Opened an issue", date: event.created_at, url: issue?.html_url || repoUrl, repo });
+      } else if (event.type === "PullRequestEvent" && event.payload?.action === "opened") {
+        const pull = event.payload.pull_request;
+        activities.push({ type: "PULL REQUEST", title: pull?.title || "Opened a pull request", date: event.created_at, url: pull?.html_url || repoUrl, repo });
+      } else if (event.type === "PullRequestReviewEvent") {
+        const pull = event.payload?.pull_request;
+        activities.push({ type: "PULL REQUEST REVIEW", title: `Reviewed: ${pull?.title || "Pull request"}`, date: event.created_at, url: pull?.html_url || repoUrl, repo });
+      }
+    });
 
   activities.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
   if (!activities.length) {
-    container.innerHTML = '<p class="empty-state">No public contributions were found for this date in GitHub’s available activity.</p>';
+    container.innerHTML = '<p class="empty-state">No public commits or recorded public activity were found for this date in the latest snapshot.</p>';
     return;
   }
 
