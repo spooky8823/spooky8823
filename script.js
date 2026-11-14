@@ -353,14 +353,18 @@ async function loadContributionGraph() {
       const monthSpan = document.createElement("span");
       const weekEnd = new Date(weekStart);
       weekEnd.setDate(weekStart.getDate() + 6);
-      // Label a month above the week containing its 1st day, not the
-      // following Sunday. Otherwise months beginning Mon-Sat appear a
-      // whole column late and activity looks like it belongs to the next month.
+      // Label the week that contains the 1st of each month. Checking
+      // only whether a week crosses a month boundary misses months whose
+      // 1st falls on Sunday (the first day of a graph column).
+      const firstOfMonth = new Date(weekStart.getFullYear(), weekStart.getMonth(), 1);
+      const nextMonthFirst = new Date(weekStart.getFullYear(), weekStart.getMonth() + 1, 1);
       const labelMonth = week === 0
         ? weekStart.getMonth()
-        : weekEnd.getMonth() !== weekStart.getMonth()
-          ? weekEnd.getMonth()
-          : null;
+        : firstOfMonth >= weekStart && firstOfMonth <= weekEnd
+          ? weekStart.getMonth()
+          : nextMonthFirst >= weekStart && nextMonthFirst <= weekEnd
+            ? nextMonthFirst.getMonth()
+            : null;
       if (labelMonth !== null && labelMonth !== lastMonth) {
         monthSpan.textContent = monthNames[labelMonth];
         lastMonth = labelMonth;
