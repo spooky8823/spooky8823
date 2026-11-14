@@ -123,7 +123,7 @@ jobs:
               message: (commit.commit?.message || "Commit").split("\n")[0],
               date: commit.commit?.committer?.date || commit.commit?.author?.date || null,
               url: commit.html_url,
-              repo: commit.repository?.full_name || commit.repository?.name || ""
+              repo: repo.full_name
             })).filter((commit) => commit.date)
               .sort((a, b) => new Date(b.date) - new Date(a.date));
 
