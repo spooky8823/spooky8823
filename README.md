@@ -1,5 +1,4 @@
 <p align="center">
-  <style>img[width="64"][height="64"] { vertical-align: middle; margin: 5px; object-fit: contain; border-radius: 12px; }</style>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=6C63FF&height=220&section=header&text=Spooky.&descAlignY=55"/>
 </p>
 
