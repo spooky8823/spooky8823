@@ -56,7 +56,7 @@ When I'm not coding, I'm usually planning the next project or just chilling.
   <br/>
   <img src="./assets/technology-shell.svg" width="64" height="64" alt="Shell" title="Shell"/>
   <img src="./assets/technology-innosetup.svg" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
-  <img src="./assets/technology-batchfile.svg" width="64" height="64" alt="Batchfile" title="Batchfile"/>
+  <img src="https://explore-feed.github.com/topics/batch-file/batch-file.png" width="64" height="64" alt="Batchfile" title="Batchfile"/>
 </p>
 
 ---
