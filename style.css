@@ -693,3 +693,40 @@ img, svg, video, canvas {
   .readme-tech-grid { padding: 8px 0 0; }
   .readme-tech-icons { width: 100%; }
 }
+
+
+/* Keep the additional detected languages in the same square-tile style. */
+.readme-tech-grid {
+  flex-direction: column;
+  gap: 12px;
+}
+.readme-tech-extra {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: min(100%, 760px);
+  margin: 0;
+}
+.readme-tech-extra img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: transform .18s ease, filter .18s ease;
+}
+.readme-tech-extra img:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.12);
+}
+@media (max-width: 620px) {
+  .readme-tech-extra { gap: 8px; }
+  .readme-tech-extra img {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+}
