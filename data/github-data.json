@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-14T10:39:33.236Z",
-  "rangeStart": "2025-11-13",
-  "rangeEnd": "2026-11-14",
+  "generatedAt": "2026-11-15T10:49:10.688Z",
+  "rangeStart": "2025-11-14",
+  "rangeEnd": "2026-11-15",
   "repositories": [
     {
       "repo": {
@@ -32,7 +32,7 @@
           "site_admin": false
         },
         "html_url": "https://github.com/spooky8823/spooky8823",
-        "description": null,
+        "description": "My Portfolio Website:",
         "fork": false,
         "url": "https://api.github.com/repos/spooky8823/spooky8823",
         "forks_url": "https://api.github.com/repos/spooky8823/spooky8823/forks",
@@ -72,14 +72,14 @@
         "releases_url": "https://api.github.com/repos/spooky8823/spooky8823/releases{/id}",
         "deployments_url": "https://api.github.com/repos/spooky8823/spooky8823/deployments",
         "created_at": "2026-07-27T03:26:16Z",
-        "updated_at": "2026-11-13T17:10:16Z",
-        "pushed_at": "2026-11-14T10:39:19Z",
+        "updated_at": "2026-11-15T07:45:34Z",
+        "pushed_at": "2026-11-15T07:45:02Z",
         "git_url": "git://github.com/spooky8823/spooky8823.git",
         "ssh_url": "git@github.com:spooky8823/spooky8823.git",
         "clone_url": "https://github.com/spooky8823/spooky8823.git",
         "svn_url": "https://github.com/spooky8823/spooky8823",
         "homepage": "https://spooky8823.github.io/spooky8823/",
-        "size": 231,
+        "size": 396,
         "stargazers_count": 3,
         "watchers_count": 3,
         "language": "CSS",
@@ -115,9 +115,9 @@
         }
       },
       "languages": {
-        "CSS": 19687,
-        "JavaScript": 15494,
-        "HTML": 11189
+        "CSS": 26551,
+        "JavaScript": 21255,
+        "HTML": 15874
       }
     },
     {
@@ -478,6 +478,475 @@
     }
   ],
   "events": [
+    {
+      "id": "27222258384",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50371038692,
+        "ref": "refs/heads/main",
+        "head": "af0c85cdbee433885a0a3df1c422eba419bb27c0",
+        "before": "e4b1dc8697265585019b217faac0e2b97cb8dc8c"
+      },
+      "public": true,
+      "created_at": "2026-11-15T07:40:30Z"
+    },
+    {
+      "id": "27221795450",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50370675714,
+        "ref": "refs/heads/main",
+        "head": "7105cf178d679d359c950cfc8a0d1b6e8ece1481",
+        "before": "412cd9372e487fb44b52c4b0966c86ed589bbcf3"
+      },
+      "public": true,
+      "created_at": "2026-11-15T07:35:01Z"
+    },
+    {
+      "id": "27221075577",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50369994135,
+        "ref": "refs/heads/main",
+        "head": "1e21bdecd30dc5dbdd56a49c7c14293a5b5a3265",
+        "before": "cc75962c5073c3bb3c1efa04278d080fe56a4e32"
+      },
+      "public": true,
+      "created_at": "2026-11-15T07:24:47Z"
+    },
+    {
+      "id": "27219223164",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50368248912,
+        "ref": "refs/heads/main",
+        "head": "d115cef941396e9fa9cb58dd2e29219fbeb95055",
+        "before": "80c82269331fc669316ad447f3133cbd43060eea"
+      },
+      "public": true,
+      "created_at": "2026-11-15T06:59:00Z"
+    },
+    {
+      "id": "27215836031",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50369971668,
+        "ref": "refs/heads/main",
+        "head": "491268efc9c07e96689e81fa3fc9462880a4db0e",
+        "before": "6aed9d27e75ec95efced4db0e328beff24685d8c"
+      },
+      "public": true,
+      "created_at": "2026-11-15T07:24:26Z"
+    },
+    {
+      "id": "27215597396",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50369765052,
+        "ref": "refs/heads/main",
+        "head": "7a073d75dfd6abc4d9624f1ff72ec5fd6f9c7d29",
+        "before": "22b2ac25cea40c7f6cf2535b52ded6e491803714"
+      },
+      "public": true,
+      "created_at": "2026-11-15T07:21:13Z"
+    },
+    {
+      "id": "27212735134",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50367198656,
+        "ref": "refs/heads/main",
+        "head": "5aeca21ef77d9ca198a0c23e46bf471798bd9a56",
+        "before": "1bd96dc6b2f51ec853dc59f54626b1c38ce373dd"
+      },
+      "public": true,
+      "created_at": "2026-11-15T06:42:48Z"
+    },
+    {
+      "id": "27210998916",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50365647808,
+        "ref": "refs/heads/main",
+        "head": "383621459171be4511bb9503fe209645b72278e1",
+        "before": "8d5e40b53941685b7812c412eddd963197e87d74"
+      },
+      "public": true,
+      "created_at": "2026-11-15T06:18:40Z"
+    },
+    {
+      "id": "27171475490",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50271977053,
+        "ref": "refs/heads/main",
+        "head": "784cad1fe1ea67b901bd1728dd145f0134fa02aa",
+        "before": "2bd55d145cd083e220606ed556f000862231864f"
+      },
+      "public": true,
+      "created_at": "2026-11-14T09:46:02Z"
+    },
+    {
+      "id": "27167268033",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50267541044,
+        "ref": "refs/heads/main",
+        "head": "99ebb0ddebaa20d1571d0195386005fe04fa3bbf",
+        "before": "296d460521d0ff3ab98a0e57474229fccd221bac"
+      },
+      "public": true,
+      "created_at": "2026-11-14T08:43:59Z"
+    },
+    {
+      "id": "27159134305",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50184880715,
+        "ref": "refs/heads/main",
+        "head": "c72f85bbcbfddcb1711a4bc0a83031c059cadc56",
+        "before": "aacfa37b55d92733e8734e81fd2be38d667f7f36"
+      },
+      "public": true,
+      "created_at": "2026-11-13T16:40:18Z"
+    },
+    {
+      "id": "27145746032",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50183991833,
+        "ref": "refs/heads/main",
+        "head": "246a4b6ba466ea15f17df75d12d210e2ef34227f",
+        "before": "b56fc7ae02e3be16d123f7194be3ac988747b398"
+      },
+      "public": true,
+      "created_at": "2026-11-13T16:32:44Z"
+    },
+    {
+      "id": "27145650594",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1420430042,
+        "name": "spooky8823/Alive-README",
+        "url": "https://api.github.com/repos/spooky8823/Alive-README"
+      },
+      "payload": {
+        "repository_id": 1420430042,
+        "push_id": 50013517180,
+        "ref": "refs/heads/main",
+        "head": "54778fe181ea9b616f305d6c1ea444987feba4c8",
+        "before": "358ce5c98cddf02ba9a9623f8921a7b8f8faaf2e"
+      },
+      "public": true,
+      "created_at": "2026-11-12T13:37:36Z"
+    },
+    {
+      "id": "27131196433",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1420430042,
+        "name": "spooky8823/Alive-README",
+        "url": "https://api.github.com/repos/spooky8823/Alive-README"
+      },
+      "payload": {
+        "repository_id": 1420430042,
+        "push_id": 50011572288,
+        "ref": "refs/heads/feature/visitor-analytics",
+        "head": "2fd6dea4a504e4c5e8ccbb8187e5c556f5da57d1",
+        "before": "96d6029f36af2f259cfe802e6d81f99081c3f65d"
+      },
+      "public": true,
+      "created_at": "2026-11-12T13:21:50Z"
+    },
+    {
+      "id": "27131114304",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1420430042,
+        "name": "spooky8823/Alive-README",
+        "url": "https://api.github.com/repos/spooky8823/Alive-README"
+      },
+      "payload": {
+        "repository_id": 1420430042,
+        "push_id": 50011508855,
+        "ref": "refs/heads/feature/visitor-analytics",
+        "head": "1591b804653b0767fc5cc586194e4ea8ac1afca7",
+        "before": "71cdaf7b608a0fb7ee6a3e400d268c9999fd8773"
+      },
+      "public": true,
+      "created_at": "2026-11-12T13:21:20Z"
+    },
+    {
+      "id": "27130809361",
+      "type": "CreateEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1420430042,
+        "name": "spooky8823/Alive-README",
+        "url": "https://api.github.com/repos/spooky8823/Alive-README"
+      },
+      "payload": {
+        "ref": "feature/visitor-analytics",
+        "ref_type": "branch",
+        "full_ref": "refs/heads/feature/visitor-analytics",
+        "master_branch": "main",
+        "description": "Gives your README.md a life instead of staticness",
+        "pusher_type": "user"
+      },
+      "public": true,
+      "created_at": "2026-11-12T13:19:16Z"
+    },
+    {
+      "id": "27126990960",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50013755690,
+        "ref": "refs/heads/main",
+        "head": "681b1019e5e9e7fcc7959e3710c7427835edfdca",
+        "before": "43ccc85804e4c4d3eef8d1c03891ff84f840bce5"
+      },
+      "public": true,
+      "created_at": "2026-11-12T13:39:34Z"
+    },
+    {
+      "id": "27124045699",
+      "type": "PushEvent",
+      "actor": {
+        "id": 247193858,
+        "login": "spooky8823",
+        "display_login": "spooky8823",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/spooky8823",
+        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
+      },
+      "repo": {
+        "id": 1313374996,
+        "name": "spooky8823/spooky8823",
+        "url": "https://api.github.com/repos/spooky8823/spooky8823"
+      },
+      "payload": {
+        "repository_id": 1313374996,
+        "push_id": 50274716859,
+        "ref": "refs/heads/main",
+        "head": "589725ee05aa47b7ba6f9d484946ac6d3e19f1d6",
+        "before": "4dd6a5c450528879892264bcbda8cd0ee6fbc16e"
+      },
+      "public": true,
+      "created_at": "2026-11-14T10:23:17Z"
+    },
     {
       "id": "27117364112",
       "type": "PushEvent",
@@ -2723,477 +3192,289 @@
       },
       "public": true,
       "created_at": "2026-10-27T14:56:12Z"
-    },
-    {
-      "id": "25382541280",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47973097598,
-        "ref": "refs/heads/main",
-        "head": "89f08362cea4fccb496e3216d54ba5a437880cdb",
-        "before": "529a875173d934878f425639ac3068e1ee924c97"
-      },
-      "public": true,
-      "created_at": "2026-10-27T14:51:15Z"
-    },
-    {
-      "id": "25245009951",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47832730609,
-        "ref": "refs/heads/main",
-        "head": "529a875173d934878f425639ac3068e1ee924c97",
-        "before": "7bac8fe2e96e42a4163b39ec140e3c88a4bd41bf"
-      },
-      "public": true,
-      "created_at": "2026-10-26T14:01:07Z"
-    },
-    {
-      "id": "25146589422",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47715313488,
-        "ref": "refs/heads/main",
-        "head": "8efc10a7426129d32b77df87c66050d40b7efae5",
-        "before": "2c84f5f79df95c6a1673761310610a2c359b06bb"
-      },
-      "public": true,
-      "created_at": "2026-10-25T12:48:45Z"
-    },
-    {
-      "id": "25141460113",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47729126927,
-        "ref": "refs/heads/main",
-        "head": "7bac8fe2e96e42a4163b39ec140e3c88a4bd41bf",
-        "before": "04744bb9378e1a32e26b82b32b5ee961cbf3275a"
-      },
-      "public": true,
-      "created_at": "2026-10-25T15:58:32Z"
-    },
-    {
-      "id": "25138118893",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47725596978,
-        "ref": "refs/heads/main",
-        "head": "04744bb9378e1a32e26b82b32b5ee961cbf3275a",
-        "before": "8efc10a7426129d32b77df87c66050d40b7efae5"
-      },
-      "public": true,
-      "created_at": "2026-10-25T15:11:24Z"
-    },
-    {
-      "id": "25132481348",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47628972260,
-        "ref": "refs/heads/main",
-        "head": "abdaacdb287cae2e96bd42c28d06d2633a41994e",
-        "before": "703a1156f201d9441fc49612ea27380e3742d7bc"
-      },
-      "public": true,
-      "created_at": "2026-10-24T13:32:28Z"
-    },
-    {
-      "id": "25119406211",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47614724106,
-        "ref": "refs/heads/main",
-        "head": "703a1156f201d9441fc49612ea27380e3742d7bc",
-        "before": "f4ddffa1b75e20b5ffefc256bbfb0f7c01ed9409"
-      },
-      "public": true,
-      "created_at": "2026-10-24T09:48:41Z"
-    },
-    {
-      "id": "25104617396",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47694365497,
-        "ref": "refs/heads/main",
-        "head": "2c84f5f79df95c6a1673761310610a2c359b06bb",
-        "before": "abdaacdb287cae2e96bd42c28d06d2633a41994e"
-      },
-      "public": true,
-      "created_at": "2026-10-25T07:11:41Z"
-    },
-    {
-      "id": "25043283357",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47605369345,
-        "ref": "refs/heads/main",
-        "head": "f4ddffa1b75e20b5ffefc256bbfb0f7c01ed9409",
-        "before": "53b3d18a6eb34ec4dbad777026092fccb028d735"
-      },
-      "public": true,
-      "created_at": "2026-10-24T07:10:32Z"
-    },
-    {
-      "id": "25034584590",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47598510790,
-        "ref": "refs/heads/main",
-        "head": "5f6ca54cce35077bc768a76ccc617bf87941f990",
-        "before": "7ab121308e6353138aedc72d719991ef0e94f01d"
-      },
-      "public": true,
-      "created_at": "2026-10-24T05:07:55Z"
-    },
-    {
-      "id": "25032674814",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1313374996,
-        "name": "spooky8823/spooky8823",
-        "url": "https://api.github.com/repos/spooky8823/spooky8823"
-      },
-      "payload": {
-        "repository_id": 1313374996,
-        "push_id": 47608915459,
-        "ref": "refs/heads/main",
-        "head": "d17ed5d61ed45d4ecf2400360dd42b80aea54db4",
-        "before": "ab4a91e215d82f852ed63877264aab8c8ef0649f"
-      },
-      "public": true,
-      "created_at": "2026-10-24T08:11:40Z"
-    },
-    {
-      "id": "25028536291",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47516977179,
-        "ref": "refs/heads/main",
-        "head": "42e7df0ef09d1a6d82d79bfe1acbe539095aa35b",
-        "before": "5b38c29b0b229dfee67dc81509d344a916eb4edc"
-      },
-      "public": true,
-      "created_at": "2026-10-23T12:32:33Z"
-    },
-    {
-      "id": "25025896378",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47517349119,
-        "ref": "refs/heads/main",
-        "head": "558cb79b02e610772aec111e67726c636b1866bd",
-        "before": "42e7df0ef09d1a6d82d79bfe1acbe539095aa35b"
-      },
-      "public": true,
-      "created_at": "2026-10-23T12:36:16Z"
-    },
-    {
-      "id": "25024178401",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47599360966,
-        "ref": "refs/heads/main",
-        "head": "56c1d001a514ee22976c4533d4dd5338c92b5b99",
-        "before": "5f6ca54cce35077bc768a76ccc617bf87941f990"
-      },
-      "public": true,
-      "created_at": "2026-10-24T05:23:32Z"
-    },
-    {
-      "id": "25023608730",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47512281888,
-        "ref": "refs/heads/main",
-        "head": "b8e4b019c4aa4b9087dbb4c4c3f43cac5df04f90",
-        "before": "252c5ad3dbcfb7c3ea5987adc33db77a173b6643"
-      },
-      "public": true,
-      "created_at": "2026-10-23T11:43:39Z"
-    },
-    {
-      "id": "25020741549",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47512300113,
-        "ref": "refs/heads/main",
-        "head": "acc322655a0e674cdf310664514d532961e3722c",
-        "before": "b8e4b019c4aa4b9087dbb4c4c3f43cac5df04f90"
-      },
-      "public": true,
-      "created_at": "2026-10-23T11:43:51Z"
-    },
-    {
-      "id": "25020562850",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47512136462,
-        "ref": "refs/heads/main",
-        "head": "1ecba6344922d0511722f017384f83c7e41ec0e3",
-        "before": "0dbbd494bc02fb50819a15ea372a2748380b1d9f"
-      },
-      "public": true,
-      "created_at": "2026-10-23T11:42:04Z"
-    },
-    {
-      "id": "25020314383",
-      "type": "PushEvent",
-      "actor": {
-        "id": 247193858,
-        "login": "spooky8823",
-        "display_login": "spooky8823",
-        "gravatar_id": "",
-        "url": "https://api.github.com/users/spooky8823",
-        "avatar_url": "https://avatars.githubusercontent.com/u/247193858?"
-      },
-      "repo": {
-        "id": 1409998286,
-        "name": "spooky8823/Vibifiy",
-        "url": "https://api.github.com/repos/spooky8823/Vibifiy"
-      },
-      "payload": {
-        "repository_id": 1409998286,
-        "push_id": 47511914952,
-        "ref": "refs/heads/main",
-        "head": "b27f7faf3a43dfe96475f45f8a2d11fd9c4ead99",
-        "before": "ff9efd3ec7d6c29ab584cdf438ea30c7771cf4e1"
-      },
-      "public": true,
-      "created_at": "2026-10-23T11:39:40Z"
     }
   ],
   "commits": [
+    {
+      "sha": "19b347c80747bafce7f18900779c826cadc83e75",
+      "message": "Delete assets directory",
+      "date": "2026-11-15T07:45:01Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/19b347c80747bafce7f18900779c826cadc83e75",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "af0c85cdbee433885a0a3df1c422eba419bb27c0",
+      "message": "Add additional images to README",
+      "date": "2026-11-15T07:40:29Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/af0c85cdbee433885a0a3df1c422eba419bb27c0",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "e4b1dc8697265585019b217faac0e2b97cb8dc8c",
+      "message": "Keep README technology icons GitHub-compatible",
+      "date": "2026-11-15T07:38:48Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/e4b1dc8697265585019b217faac0e2b97cb8dc8c",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "2e8a6e81293e8c9f4b60aefabd7d384625594aa6",
+      "message": "Align all technology provider icons as matching square tiles",
+      "date": "2026-11-15T07:38:40Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/2e8a6e81293e8c9f4b60aefabd7d384625594aa6",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "e07f1958b8422036255264a69500bc6cc782756e",
+      "message": "Restore original README technology icon image URLs",
+      "date": "2026-11-15T07:38:38Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/e07f1958b8422036255264a69500bc6cc782756e",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "1626f3473b906da74bb63cdb14abe65fe68986ec",
+      "message": "Restore original technology icon image URLs",
+      "date": "2026-11-15T07:38:35Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/1626f3473b906da74bb63cdb14abe65fe68986ec",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "79995a583b6e6521e90e848438257e9ad419af71",
+      "message": "Place extra technology icons after CMake",
+      "date": "2026-11-15T07:36:31Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/79995a583b6e6521e90e848438257e9ad419af71",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "f9cd0ba83be56d892cdcea1915066dab88eac0ed",
+      "message": "Keep all technology icons together in a square grid",
+      "date": "2026-11-15T07:36:28Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/f9cd0ba83be56d892cdcea1915066dab88eac0ed",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "35c0b562156b9bbefab2394720e3ba47d62672d2",
+      "message": "Place all technology icons in one continuous grid",
+      "date": "2026-11-15T07:36:25Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/35c0b562156b9bbefab2394720e3ba47d62672d2",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "01239e6f37d3bce7a869d2e145edf9afd7e76a30",
+      "message": "Add square Cloudflare technology icon",
+      "date": "2026-11-15T07:36:19Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/01239e6f37d3bce7a869d2e145edf9afd7e76a30",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "7105cf178d679d359c950cfc8a0d1b6e8ece1481",
+      "message": "Add Cloudflare icon to technologies section",
+      "date": "2026-11-15T07:35:00Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/7105cf178d679d359c950cfc8a0d1b6e8ece1481",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "412cd9372e487fb44b52c4b0966c86ed589bbcf3",
+      "message": "Add Cloudflare to technologies list",
+      "date": "2026-11-15T07:33:15Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/412cd9372e487fb44b52c4b0966c86ed589bbcf3",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "ff52c0a81fdbcfb4c128e336c45c51527d92e9b4",
+      "message": "Update Inno Setup image in README",
+      "date": "2026-11-15T07:30:04Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/ff52c0a81fdbcfb4c128e336c45c51527d92e9b4",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "cb839762005d70f67aea89f08e5e56ea27b3bea8",
+      "message": "Update Batchfile image source in README.md",
+      "date": "2026-11-15T07:28:38Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/cb839762005d70f67aea89f08e5e56ea27b3bea8",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "16548ff1fb8a3701a021ad42b5c0633deefaf116",
+      "message": "Match README technology icons to square tiles",
+      "date": "2026-11-15T07:24:48Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/16548ff1fb8a3701a021ad42b5c0633deefaf116",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "1e21bdecd30dc5dbdd56a49c7c14293a5b5a3265",
+      "message": "Style additional technology icons as square tiles",
+      "date": "2026-11-15T07:24:46Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/1e21bdecd30dc5dbdd56a49c7c14293a5b5a3265",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "cc75962c5073c3bb3c1efa04278d080fe56a4e32",
+      "message": "Display all technology icons as square tiles",
+      "date": "2026-11-15T07:24:43Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/cc75962c5073c3bb3c1efa04278d080fe56a4e32",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "fc5773ed68866eb715919ec813d41a2797128c1d",
+      "message": "Add square technology icons",
+      "date": "2026-11-15T07:24:29Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/fc5773ed68866eb715919ec813d41a2797128c1d",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "e70ffc8af970dcab2b2b776f9f031ed10b789619",
+      "message": "Add square technology icons",
+      "date": "2026-11-15T07:24:27Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/e70ffc8af970dcab2b2b776f9f031ed10b789619",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "491268efc9c07e96689e81fa3fc9462880a4db0e",
+      "message": "Add square technology icons",
+      "date": "2026-11-15T07:24:24Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/491268efc9c07e96689e81fa3fc9462880a4db0e",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "6aed9d27e75ec95efced4db0e328beff24685d8c",
+      "message": "Style additional technology labels",
+      "date": "2026-11-15T07:21:18Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/6aed9d27e75ec95efced4db0e328beff24685d8c",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "7a073d75dfd6abc4d9624f1ff72ec5fd6f9c7d29",
+      "message": "Add detected languages to portfolio technology stack",
+      "date": "2026-11-15T07:21:12Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/7a073d75dfd6abc4d9624f1ff72ec5fd6f9c7d29",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "22b2ac25cea40c7f6cf2535b52ded6e491803714",
+      "message": "Add detected languages to README technology stack",
+      "date": "2026-11-15T07:21:08Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/22b2ac25cea40c7f6cf2535b52ded6e491803714",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "4c09320431e5e4f818dee273cce47a8c9a0b533b",
+      "message": "Fetch live commits for selected contribution day",
+      "date": "2026-11-15T07:00:35Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/4c09320431e5e4f818dee273cce47a8c9a0b533b",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "d115cef941396e9fa9cb58dd2e29219fbeb95055",
+      "message": "Connect contribution graph selection to daily activity",
+      "date": "2026-11-15T06:58:59Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/d115cef941396e9fa9cb58dd2e29219fbeb95055",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "80c82269331fc669316ad447f3133cbd43060eea",
+      "message": "Make contribution graph squares interactive",
+      "date": "2026-11-15T06:56:00Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/80c82269331fc669316ad447f3133cbd43060eea",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "251fa7ae4bd23a8468f0eef5c1e9e58b9912a0d9",
+      "message": "Keep latest commits panel independent of graph",
+      "date": "2026-11-15T06:49:46Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/251fa7ae4bd23a8468f0eef5c1e9e58b9912a0d9",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "672ddc8e698236fff378db28d990f3ad96950e46",
+      "message": "Update interests in README",
+      "date": "2026-11-15T06:49:07Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/672ddc8e698236fff378db28d990f3ad96950e46",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "ce3ce1ac7234702a8a5d3510436163f8c0bc69b2",
+      "message": "checkin if my wesite works",
+      "date": "2026-11-15T06:47:40Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/ce3ce1ac7234702a8a5d3510436163f8c0bc69b2",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "301ca14090f5d18e00407dd0568d0cd47eb24c50",
+      "message": "Read latest commits from repository history",
+      "date": "2026-11-15T06:45:49Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/301ca14090f5d18e00407dd0568d0cd47eb24c50",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "5aeca21ef77d9ca198a0c23e46bf471798bd9a56",
+      "message": "Load latest commits directly from GitHub",
+      "date": "2026-11-15T06:42:47Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/5aeca21ef77d9ca198a0c23e46bf471798bd9a56",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "1bd96dc6b2f51ec853dc59f54626b1c38ce373dd",
+      "message": "Fix contribution graph to include today's column",
+      "date": "2026-11-15T06:38:59Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/1bd96dc6b2f51ec853dc59f54626b1c38ce373dd",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "e8d488b5002c9f089ccbe1b40ffdcb46526326c1",
+      "message": "Style responsive README technology icon grid",
+      "date": "2026-11-15T06:18:50Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/e8d488b5002c9f089ccbe1b40ffdcb46526326c1",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "383621459171be4511bb9503fe209645b72278e1",
+      "message": "Keep README technology icon grid static",
+      "date": "2026-11-15T06:18:39Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/383621459171be4511bb9503fe209645b72278e1",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "8d5e40b53941685b7812c412eddd963197e87d74",
+      "message": "Match website technologies section to README icons",
+      "date": "2026-11-15T06:18:36Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/8d5e40b53941685b7812c412eddd963197e87d74",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "a33afc1d9286389f9314e21eaeeebd1bbe219b89",
+      "message": "Fix contribution graph default scroll to latest weeks",
+      "date": "2026-11-14T14:31:48Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/a33afc1d9286389f9314e21eaeeebd1bbe219b89",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "93c252d529166dc97141d9d57c928b0fd982cda4",
+      "message": "Style full-width hero CTA and social buttons",
+      "date": "2026-11-14T14:23:12Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/93c252d529166dc97141d9d57c928b0fd982cda4",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "22ac58aa4a349d2b82126fa65df5cb300d04e45d",
+      "message": "Add full-width hero CTA and branded social links",
+      "date": "2026-11-14T14:23:09Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/22ac58aa4a349d2b82126fa65df5cb300d04e45d",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "c3333d8da837e9e0a172e760965fc17153023c6b",
+      "message": "Fix missing contribution graph month labels",
+      "date": "2026-11-14T14:19:17Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/c3333d8da837e9e0a172e760965fc17153023c6b",
+      "repo": "spooky8823/spooky8823"
+    },
+    {
+      "sha": "179830c3d8f20153255c6c9314781a4aca5d0652",
+      "message": "Fix mobile layout and contain activity scrolling",
+      "date": "2026-11-14T14:14:38Z",
+      "url": "https://github.com/spooky8823/spooky8823/commit/179830c3d8f20153255c6c9314781a4aca5d0652",
+      "repo": "spooky8823/spooky8823"
+    },
     {
       "sha": "244d44605588330af1fcff0ab0b853ade9c1f3e7",
       "message": "Attach repository names to cached commits",
