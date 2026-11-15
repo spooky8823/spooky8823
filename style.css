@@ -652,3 +652,24 @@ img, svg, video, canvas {
   .hero-social { min-height: 50px; flex-direction: column; gap: 3px; padding: 7px 2px; font-size: .62rem; }
   .hero-social svg { width: 18px; height: 18px; flex-basis: 18px; }
 }
+
+
+/* README-matching technology icon grid */
+.readme-tech-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0 8px;
+}
+.readme-tech-icons {
+  display: block;
+  width: min(100%, 760px);
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+@media (max-width: 620px) {
+  .readme-tech-grid { padding: 8px 0 0; }
+  .readme-tech-icons { width: 100%; }
+}
