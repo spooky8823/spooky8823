@@ -52,13 +52,30 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 ## Technologies
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=rust,cpp,python,java,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma,c,cmake&perline=8" alt="Rust, C++, Python, Java, Bash, Node.js, Electron, JavaScript, HTML, CSS, Supabase, GTK, GitHub, VS Code, Linux, Linux Mint, Blender, Figma, C, and CMake"/>
-  <br/>
-  <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Inno_Setup_icon.png/250px-Inno_Setup_icon.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
-  <img src="https://explore-feed.github.com/topics/batch-file/batch-file.png" width="64" height="64" alt="Batchfile" title="Batchfile"/>
-  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFczPImY8ztLtEh_Av34qpBEylfYBDclgWagjYvlfD-oOWTm56xkA7yI&s=10" width="64" height="64" alt="Cloudflare" title="Batchfile"/>
+  <img src="https://skillicons.dev/icons?i=rust" width="64" height="64" alt="Rust" title="Rust"/>
+  <img src="https://skillicons.dev/icons?i=cpp" width="64" height="64" alt="C++" title="C++"/>
+  <img src="https://skillicons.dev/icons?i=python" width="64" height="64" alt="Python" title="Python"/>
+  <img src="https://skillicons.dev/icons?i=java" width="64" height="64" alt="Java" title="Java"/>
+  <img src="https://skillicons.dev/icons?i=bash" width="64" height="64" alt="Bash" title="Bash"/>
+  <img src="https://skillicons.dev/icons?i=nodejs" width="64" height="64" alt="Node.js" title="Node.js"/>
+  <img src="https://skillicons.dev/icons?i=electron" width="64" height="64" alt="Electron" title="Electron"/>
+  <img src="https://skillicons.dev/icons?i=js" width="64" height="64" alt="JavaScript" title="JavaScript"/>
+  <img src="https://skillicons.dev/icons?i=html" width="64" height="64" alt="HTML" title="HTML"/>
+  <img src="https://skillicons.dev/icons?i=css" width="64" height="64" alt="CSS" title="CSS"/>
+  <img src="https://skillicons.dev/icons?i=supabase" width="64" height="64" alt="Supabase" title="Supabase"/>
+  <img src="https://skillicons.dev/icons?i=gtk" width="64" height="64" alt="GTK" title="GTK"/>
+  <img src="https://skillicons.dev/icons?i=github" width="64" height="64" alt="GitHub" title="GitHub"/>
+  <img src="https://skillicons.dev/icons?i=vscode" width="64" height="64" alt="VS Code" title="VS Code"/>
+  <img src="https://skillicons.dev/icons?i=linux" width="64" height="64" alt="Linux" title="Linux"/>
+  <img src="https://skillicons.dev/icons?i=mint" width="64" height="64" alt="Linux Mint" title="Linux Mint"/>
+  <img src="https://skillicons.dev/icons?i=blender" width="64" height="64" alt="Blender" title="Blender"/>
+  <img src="https://skillicons.dev/icons?i=figma" width="64" height="64" alt="Figma" title="Figma"/>
+  <img src="https://skillicons.dev/icons?i=c" width="64" height="64" alt="C" title="C"/>
+  <img src="https://skillicons.dev/icons?i=cmake" width="64" height="64" alt="CMake" title="CMake"/>
+  <img src="./assets/technology-innosetup.svg" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
+  <img src="./assets/technology-batchfile.svg" width="64" height="64" alt="Batchfile" title="Batchfile"/>
+  <img src="./assets/technology-cloudflare.svg" width="64" height="64" alt="Cloudflare" title="Cloudflare"/>
 </p>
-
 ---
 
 ## Current Focus
