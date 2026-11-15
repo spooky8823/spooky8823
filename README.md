@@ -75,7 +75,13 @@ When I'm not coding, I'm usually planning the next project or just chilling.
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Inno_Setup_icon.png/250px-Inno_Setup_icon.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
   <img src="https://explore-feed.github.com/topics/batch-file/batch-file.png" width="64" height="64" alt="Batchfile" title="Batchfile"/>
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFczPImY8ztLtEh_Av34qpBEylfYBDclgWagjYvlfD-oOWTm56xkA7yI&s=10" width="64" height="64" alt="Cloudflare" title="Cloudflare"/>
-  <img src="https://skillicons.dev/icons?i=render" width="64" height="64" alt="Rust" title="Render"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuWqoKCQEqHePxbsmABJopWiv3mr6eGb-_LcZ0yp07A3decwThvIw_3_U&s=10" width="64" height="64" alt="Render" title="Render"/>
+  <img src="https://workable-application-form.s3.amazonaws.com/advanced/production/61557f91d9510741dc62e7f8/c3635b59-a3d2-444a-b636-a9d0061dcdde" width="64" height="64" alt="Hugging face" title="Hugging Face"/>
+  <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Cerebras_logo.svg/960px-Cerebras_logo.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" width="64" height="64" alt="Cerebras" title="Cerebras"/>
+  <img src="https://ngrok.com/assets/ngrok-logo.png" width="64" height="64" alt="Ngrok" title="Ngrok"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGZ3WAS8fuXpmugrG0-A7ELa6wh4fWHp8SRIYxx5U8PjSyxg_8aKQIZxY&s=10" width="64" height="64" alt="Kaggel" title="Kaggel"/>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Google_Colab_pic.png?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" width="64" height="64" alt="Google Colab" title="Google Colab"/>
+  
 </p>
 
 ---
