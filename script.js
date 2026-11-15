@@ -183,9 +183,14 @@ async function loadContributionGraph() {
     const WEEKS = 53, DAYS = 7;
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    const startDate = new Date(today);
-    startDate.setDate(today.getDate() - (WEEKS * DAYS - 1));
-    startDate.setDate(startDate.getDate() - startDate.getDay());
+
+    // Anchor the final column to the current Sunday-Saturday week.
+    // Starting 52 weeks before this Sunday keeps exactly 53 columns
+    // while ensuring today's square is always included at the far right.
+    const currentWeekStart = new Date(today);
+    currentWeekStart.setDate(today.getDate() - today.getDay());
+    const startDate = new Date(currentWeekStart);
+    startDate.setDate(currentWeekStart.getDate() - (WEEKS - 1) * DAYS);
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
     let lastMonth = -1;
     monthsEl.innerHTML = "";
