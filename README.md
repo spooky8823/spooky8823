@@ -1,4 +1,5 @@
 <p align="center">
+  <style>img[width="64"][height="64"] { vertical-align: middle; margin: 5px; object-fit: contain; border-radius: 12px; }</style>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=6C63FF&height=220&section=header&text=Spooky.&descAlignY=55"/>
 </p>
 
@@ -72,9 +73,9 @@ When I'm not coding, I'm usually planning the next project or just chilling.
   <img src="https://skillicons.dev/icons?i=figma" width="64" height="64" alt="Figma" title="Figma"/>
   <img src="https://skillicons.dev/icons?i=c" width="64" height="64" alt="C" title="C"/>
   <img src="https://skillicons.dev/icons?i=cmake" width="64" height="64" alt="CMake" title="CMake"/>
-  <img src="./assets/technology-innosetup.svg" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
-  <img src="./assets/technology-batchfile.svg" width="64" height="64" alt="Batchfile" title="Batchfile"/>
-  <img src="./assets/technology-cloudflare.svg" width="64" height="64" alt="Cloudflare" title="Cloudflare"/>
+  <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Inno_Setup_icon.png/250px-Inno_Setup_icon.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
+  <img src="https://explore-feed.github.com/topics/batch-file/batch-file.png" width="64" height="64" alt="Batchfile" title="Batchfile"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFczPImY8ztLtEh_Av34qpBEylfYBDclgWagjYvlfD-oOWTm56xkA7yI&s=10" width="64" height="64" alt="Cloudflare" title="Cloudflare"/>
 </p>
 ---
 
