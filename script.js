@@ -265,7 +265,9 @@ async function loadContributionGraph() {
         const cell = document.createElement("div");
         cell.className = "cell";
         cell.dataset.level = String(level);
-        cell.setAttribute("role", "img");
+        cell.setAttribute("role", "button");
+        cell.setAttribute("tabindex", "0");
+        cell.setAttribute("aria-pressed", "false");
         const formattedDate = date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
         const message = `${count} contribution${count === 1 ? "" : "s"} on ${formattedDate}`;
         cell.setAttribute("aria-label", message);
@@ -286,12 +288,35 @@ async function loadContributionGraph() {
           tooltipEl.style.left = `${Math.max(10, left)}px`;
           tooltipEl.style.top = `${Math.max(10, top)}px`;
         };
-        const hideTooltip = () => tooltipEl?.classList.remove("visible");
+        const hideTooltip = () => {
+          if (cell.getAttribute("aria-pressed") !== "true") tooltipEl?.classList.remove("visible");
+        };
+        const selectCell = () => {
+          const wasSelected = cell.getAttribute("aria-pressed") === "true";
+          gridEl.querySelectorAll(".cell[aria-pressed='true']").forEach((selected) => {
+            selected.setAttribute("aria-pressed", "false");
+            selected.classList.remove("selected");
+          });
+          if (wasSelected) {
+            tooltipEl?.classList.remove("visible");
+            return;
+          }
+          cell.setAttribute("aria-pressed", "true");
+          cell.classList.add("selected");
+          positionTooltip();
+        };
         cell.addEventListener("mouseenter", positionTooltip);
         cell.addEventListener("mousemove", positionTooltip);
         cell.addEventListener("focus", () => positionTooltip());
         cell.addEventListener("mouseleave", hideTooltip);
         cell.addEventListener("blur", hideTooltip);
+        cell.addEventListener("click", selectCell);
+        cell.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            selectCell();
+          }
+        });
         gridEl.appendChild(cell);
       }
     }
