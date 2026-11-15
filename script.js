@@ -174,25 +174,45 @@ async function loadCommitsForDate(dateKey, selectedCell) {
   const container = document.getElementById("latest-activity");
   const heading = document.getElementById("activity-heading");
   if (!container) return;
+
   document.querySelectorAll("#grid-cells .cell[aria-pressed='true']").forEach((cell) => {
     cell.setAttribute("aria-pressed", "false");
     cell.classList.remove("selected");
   });
   selectedCell?.setAttribute("aria-pressed", "true");
   selectedCell?.classList.add("selected");
-  const selectedDate = new Date(`${dateKey}T12:00:00`);
+
+  const [year, month, day] = dateKey.split("-").map(Number);
+  const selectedDate = new Date(year, month - 1, day);
   const label = selectedDate.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
   if (heading) heading.textContent = `Activity on ${label}.`;
-  const activities = githubCommits.filter((commit) => commit.date?.slice(0, 10) === dateKey).map((commit) => ({
-    type: "COMMIT", title: commit.message || "Commit", date: commit.date, url: commit.url, repo: commit.repo || ""
-  }));
-  githubEvents.filter((event) => event.created_at?.slice(0, 10) === dateKey).forEach((event) => {
+  container.innerHTML = '<p class="empty-state">Loading activity for this date…</p>';
+
+  // Use local calendar-day boundaries, converted to UTC for GitHub's API.
+  // The published snapshot is intentionally not the source of truth for today's commits.
+  const dayStart = new Date(year, month - 1, day).toISOString();
+  const dayEnd = new Date(year, month - 1, day + 1).toISOString();
+  const activities = githubCommits
+    .filter((commit) => commit.date && new Date(commit.date) >= new Date(dayStart) && new Date(commit.date) < new Date(dayEnd))
+    .map((commit) => ({
+      type: "COMMIT", title: commit.message || "Commit", date: commit.date,
+      url: commit.url, repo: commit.repo || ""
+    }));
+
+  githubEvents.filter((event) => {
+    if (!event.created_at) return false;
+    const eventDate = new Date(event.created_at);
+    return eventDate >= new Date(dayStart) && eventDate < new Date(dayEnd);
+  }).forEach((event) => {
     const repo = event.repo?.name || "";
     const repoUrl = repo ? `https://github.com/${repo}` : `https://github.com/${GITHUB_USER}`;
     if (event.type === "PushEvent") {
       (event.payload?.commits || []).forEach((commit) => {
         const url = commit.sha ? `${repoUrl}/commit/${commit.sha}` : repoUrl;
-        if (!activities.some((item) => item.url === url)) activities.push({ type: "COMMIT", title: commit.message?.split("\n")[0] || "Commit", date: event.created_at, url, repo });
+        if (!activities.some((item) => item.url === url)) activities.push({
+          type: "COMMIT", title: commit.message?.split("\n")[0] || "Commit",
+          date: event.created_at, url, repo
+        });
       });
     } else if (event.type === "IssuesEvent" && event.payload?.action === "opened") {
       const issue = event.payload.issue;
@@ -205,12 +225,36 @@ async function loadCommitsForDate(dateKey, selectedCell) {
       activities.push({ type: "PULL REQUEST REVIEW", title: `Reviewed: ${pull?.title || "Pull request"}`, date: event.created_at, url: pull?.html_url || repoUrl, repo });
     }
   });
+
+  // Fetch the selected day directly so commits made after the last JSON snapshot appear.
+  try {
+    const liveCommits = await github(
+      `/repos/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(GITHUB_USER)}/commits?since=${encodeURIComponent(dayStart)}&until=${encodeURIComponent(dayEnd)}&per_page=100`
+    );
+    (Array.isArray(liveCommits) ? liveCommits : []).forEach((item) => {
+      const date = item.commit?.committer?.date || item.commit?.author?.date;
+      const url = item.html_url;
+      if (!date || !url || activities.some((activity) => activity.url === url)) return;
+      activities.push({
+        type: "COMMIT",
+        title: item.commit?.message?.split("\n")[0] || "Commit",
+        date,
+        url,
+        repo: `${GITHUB_USER}/${GITHUB_USER}`
+      });
+    });
+  } catch (error) {
+    console.warn("Live daily commit lookup failed; showing available snapshot activity.", error);
+  }
+
   activities.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
   if (!activities.length) {
-    container.innerHTML = '<p class="empty-state">No public commits or recorded public activity were found for this date in the latest snapshot.</p>';
+    container.innerHTML = '<p class="empty-state">No public commits or recorded public activity were found for this date.</p>';
     return;
   }
-  container.innerHTML = activities.map((item) => `<article class="activity-item"><a href="${escapeHTML(item.url || "https://github.com/" + GITHUB_USER)}" target="_blank" rel="noreferrer"><div class="activity-meta"><span>${escapeHTML(item.type)}</span><time>${escapeHTML(formatDate(item.date))}</time></div><div class="activity-title">${escapeHTML(item.title)}</div><div class="activity-repo">${escapeHTML(item.repo)}</div></a></article>`).join("");
+  container.innerHTML = activities.map((item) =>
+    `<article class="activity-item"><a href="${escapeHTML(item.url || "https://github.com/" + GITHUB_USER)}" target="_blank" rel="noreferrer"><div class="activity-meta"><span>${escapeHTML(item.type)}</span><time>${escapeHTML(formatDate(item.date))}</time></div><div class="activity-title">${escapeHTML(item.title)}</div><div class="activity-repo">${escapeHTML(item.repo)}</div></a></article>`
+  ).join("");
 }
 async function loadContributionGraph() {
   const container = document.getElementById("contribution-graph");
