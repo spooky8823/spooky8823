@@ -765,3 +765,15 @@ img, svg, video, canvas {
 @media (max-width: 440px) {
   .readme-tech-grid { grid-template-columns: repeat(4, minmax(0, 64px)); }
 }
+
+/* Consistent square tiles for all technology providers, including custom icon URLs. */
+.readme-tech-grid > img {
+  box-sizing: border-box;
+  width: 64px;
+  height: 64px;
+  padding: 4px;
+  border-radius: 12px;
+  background: #252938;
+  object-fit: contain;
+  vertical-align: middle;
+}
