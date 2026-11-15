@@ -669,6 +669,26 @@ img, svg, video, canvas {
   max-width: 100%;
   object-fit: contain;
 }
+
+.readme-tech-extra {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  width: min(100%, 760px);
+  margin-top: 14px;
+}
+
+.readme-tech-extra span {
+  padding: 7px 12px;
+  border: 1px solid var(--line, #292638);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--muted, #a5a0b8);
+  font-family: "DM Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.02em;
+}
 @media (max-width: 620px) {
   .readme-tech-grid { padding: 8px 0 0; }
   .readme-tech-icons { width: 100%; }
