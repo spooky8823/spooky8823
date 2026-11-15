@@ -52,7 +52,11 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 ## Technologies
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=rust,cpp,python,java,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma&perline=8"/>
+<img src="https://skillicons.dev/icons?i=rust,cpp,python,java,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma,c,cmake&perline=8"/>
+<br/>
+<img src="https://img.shields.io/badge/Shell-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white"/>
+<img src="https://img.shields.io/badge/Inno%20Setup-2D5B9A?style=for-the-badge&logo=windows&logoColor=white"/>
+<img src="https://img.shields.io/badge/Batchfile-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
 </p>
 
 ---
