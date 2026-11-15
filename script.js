@@ -292,17 +292,8 @@ async function loadContributionGraph() {
           if (cell.getAttribute("aria-pressed") !== "true") tooltipEl?.classList.remove("visible");
         };
         const selectCell = () => {
-          const wasSelected = cell.getAttribute("aria-pressed") === "true";
-          gridEl.querySelectorAll(".cell[aria-pressed='true']").forEach((selected) => {
-            selected.setAttribute("aria-pressed", "false");
-            selected.classList.remove("selected");
-          });
-          if (wasSelected) {
-            tooltipEl?.classList.remove("visible");
-            return;
-          }
-          cell.setAttribute("aria-pressed", "true");
-          cell.classList.add("selected");
+          // A graph selection must update the activity panel as well as the tooltip.
+          loadCommitsForDate(dateKey, cell);
           positionTooltip();
         };
         cell.addEventListener("mouseenter", positionTooltip);
