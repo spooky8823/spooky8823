@@ -116,13 +116,66 @@ function renderCommitItems(container, commits, emptyMessage) {
     return `<article class="activity-item"><a href="${escapeHTML(url)}" target="_blank" rel="noreferrer"><div class="activity-meta"><span>COMMIT</span><time>${escapeHTML(formatDate(date))}</time></div><div class="activity-title">${escapeHTML(message)}</div><div class="activity-repo">${escapeHTML(repo)}</div></a></article>`;
   }).join("");
 }
+let latestCommitsRefreshStarted = false;
+let latestCommitsRequestInFlight = false;
+
 async function loadLatestCommits() {
   const container = document.getElementById("latest-activity");
   const heading = document.getElementById("activity-heading");
-  if (!container) return;
-  const latest = [...githubCommits].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0)).slice(0, 4);
+  if (!container || latestCommitsRequestInFlight) return;
+  latestCommitsRequestInFlight = true;
   if (heading) heading.textContent = "Latest 4 commits.";
-  renderCommitItems(container, latest, "No recent public commits were found in the latest repository snapshot.");
+
+  try {
+    // Read the user's public push events directly from GitHub instead of
+    // waiting for the scheduled portfolio JSON snapshot.
+    const events = await github(`/users/${encodeURIComponent(GITHUB_USER)}/events/public?per_page=100`);
+    const liveCommits = [];
+    (Array.isArray(events) ? events : []).forEach((event) => {
+      if (event.type !== "PushEvent" || event.actor?.login?.toLowerCase() !== GITHUB_USER.toLowerCase()) return;
+      const repo = event.repo?.name || "";
+      const repoUrl = repo ? `https://github.com/${repo}` : `https://github.com/${GITHUB_USER}`;
+      (event.payload?.commits || []).forEach((commit) => {
+        if (!commit.sha) return;
+        liveCommits.push({
+          message: commit.message?.split("\\n")[0] || "Commit",
+          date: event.created_at,
+          url: `${repoUrl}/commit/${commit.sha}`,
+          repo
+        });
+      });
+    });
+
+    liveCommits.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+    const latest = liveCommits.length
+      ? liveCommits.slice(0, 4)
+      : [...githubCommits].sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0)).slice(0, 4);
+
+    renderCommitItems(
+      container,
+      latest,
+      "No recent public commits were found. GitHub may take a little while to publish new activity."
+    );
+  } catch (error) {
+    console.warn("Live GitHub commits could not be loaded; showing the saved snapshot instead.", error);
+    const fallback = [...githubCommits]
+      .sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0))
+      .slice(0, 4);
+    renderCommitItems(container, fallback, "Live commits are temporarily unavailable. Check the GitHub profile for the latest history.");
+  } finally {
+    latestCommitsRequestInFlight = false;
+  }
+
+  // Refresh while the page is open, but avoid polling in background tabs.
+  if (!latestCommitsRefreshStarted) {
+    latestCommitsRefreshStarted = true;
+    window.setInterval(() => {
+      if (document.visibilityState === "visible") loadLatestCommits();
+    }, 120000);
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState === "visible") loadLatestCommits();
+    });
+  }
 }
 async function loadCommitsForDate(dateKey, selectedCell) {
   const container = document.getElementById("latest-activity");
