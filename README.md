@@ -52,11 +52,11 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 ## Technologies
 
 <p align="center">
-<img src="https://skillicons.dev/icons?i=rust,cpp,python,java,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma,c,cmake&perline=8"/>
-<br/>
-<img src="https://img.shields.io/badge/Shell-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white"/>
-<img src="https://img.shields.io/badge/Inno%20Setup-2D5B9A?style=for-the-badge&logo=windows&logoColor=white"/>
-<img src="https://img.shields.io/badge/Batchfile-0078D6?style=for-the-badge&logo=windows&logoColor=white"/>
+  <img src="https://skillicons.dev/icons?i=rust,cpp,python,java,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma,c,cmake&perline=8" alt="Rust, C++, Python, Java, Bash, Node.js, Electron, JavaScript, HTML, CSS, Supabase, GTK, GitHub, VS Code, Linux, Linux Mint, Blender, Figma, C, and CMake"/>
+  <br/>
+  <img src="./assets/technology-shell.svg" width="64" height="64" alt="Shell" title="Shell"/>
+  <img src="./assets/technology-innosetup.svg" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
+  <img src="./assets/technology-batchfile.svg" width="64" height="64" alt="Batchfile" title="Batchfile"/>
 </p>
 
 ---
