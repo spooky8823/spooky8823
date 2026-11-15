@@ -75,6 +75,7 @@ When I'm not coding, I'm usually planning the next project or just chilling.
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Inno_Setup_icon.png/250px-Inno_Setup_icon.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
   <img src="https://explore-feed.github.com/topics/batch-file/batch-file.png" width="64" height="64" alt="Batchfile" title="Batchfile"/>
   <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFczPImY8ztLtEh_Av34qpBEylfYBDclgWagjYvlfD-oOWTm56xkA7yI&s=10" width="64" height="64" alt="Cloudflare" title="Cloudflare"/>
+  <img src="https://skillicons.dev/icons?i=render" width="64" height="64" alt="Rust" title="Render"/>
 </p>
 
 ---
