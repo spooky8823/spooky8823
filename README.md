@@ -82,8 +82,6 @@ I believe open source creates better software, stronger communities, and better 
 - Learning something new every day
 - Minecraft
 - Exploring new technologies
-
-- 
 - Building experimental projects
 - Automating everyday tasks
 
