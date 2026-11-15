@@ -265,12 +265,10 @@ async function loadContributionGraph() {
         const cell = document.createElement("div");
         cell.className = "cell";
         cell.dataset.level = String(level);
-        cell.setAttribute("tabindex", "0");
-        cell.setAttribute("role", "button");
-        cell.setAttribute("aria-pressed", "false");
+        cell.setAttribute("role", "img");
         const formattedDate = date.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
         const message = `${count} contribution${count === 1 ? "" : "s"} on ${formattedDate}`;
-        cell.setAttribute("aria-label", `${message}. Select to view commits from this date.`);
+        cell.setAttribute("aria-label", message);
         const positionTooltip = (pointerEvent) => {
           if (!tooltipEl) return;
           const rect = cell.getBoundingClientRect();
@@ -289,10 +287,6 @@ async function loadContributionGraph() {
           tooltipEl.style.top = `${Math.max(10, top)}px`;
         };
         const hideTooltip = () => tooltipEl?.classList.remove("visible");
-        cell.addEventListener("click", () => loadCommitsForDate(dateKey, cell));
-        cell.addEventListener("keydown", (event) => {
-          if (event.key === "Enter" || event.key === " ") { event.preventDefault(); loadCommitsForDate(dateKey, cell); }
-        });
         cell.addEventListener("mouseenter", positionTooltip);
         cell.addEventListener("mousemove", positionTooltip);
         cell.addEventListener("focus", () => positionTooltip());
