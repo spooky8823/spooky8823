@@ -730,3 +730,38 @@ img, svg, video, canvas {
     flex-basis: 56px;
   }
 }
+
+
+/* One continuous technology grid: the final tiles follow CMake. */
+.readme-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 64px);
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 0 8px;
+}
+.readme-tech-grid > img {
+  display: block;
+  width: 64px;
+  height: 64px;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  transition: transform .18s ease, filter .18s ease;
+}
+.readme-tech-grid > img:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+@media (max-width: 720px) {
+  .readme-tech-grid {
+    grid-template-columns: repeat(6, minmax(0, 64px));
+    gap: 8px;
+  }
+  .readme-tech-grid > img { width: 100%; height: auto; aspect-ratio: 1; }
+}
+@media (max-width: 440px) {
+  .readme-tech-grid { grid-template-columns: repeat(4, minmax(0, 64px)); }
+}
