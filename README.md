@@ -52,10 +52,11 @@ When I'm not coding, I'm usually planning the next project or just chilling.
 ## Technologies
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=rust,cpp,python,java,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma,c,cmake&perline=8" alt="Rust, C++, Python, Java, Bash, Node.js, Electron, JavaScript, HTML, CSS, Supabase, GTK, GitHub, VS Code, Linux, Linux Mint, Blender, Figma, C,cloudflare and CMake"/>
+  <img src="https://skillicons.dev/icons?i=rust,cpp,python,java,bash,nodejs,electron,js,html,css,supabase,gtk,github,vscode,linux,mint,blender,figma,c,cmake&perline=8" alt="Rust, C++, Python, Java, Bash, Node.js, Electron, JavaScript, HTML, CSS, Supabase, GTK, GitHub, VS Code, Linux, Linux Mint, Blender, Figma, C, and CMake"/>
   <br/>
   <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cc/Inno_Setup_icon.png/250px-Inno_Setup_icon.png?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail" width="64" height="64" alt="Inno Setup" title="Inno Setup"/>
   <img src="https://explore-feed.github.com/topics/batch-file/batch-file.png" width="64" height="64" alt="Batchfile" title="Batchfile"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnFczPImY8ztLtEh_Av34qpBEylfYBDclgWagjYvlfD-oOWTm56xkA7yI&s=10" width="64" height="64" alt="Cloudflare" title="Batchfile"/>
 </p>
 
 ---
