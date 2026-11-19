@@ -63,9 +63,40 @@ async function loadPortfolio() {
     }
     await loadLatestCommits();
   } catch (error) {
-    console.error("Could not load the published GitHub data:", error);
-    projects.innerHTML = '<p class="empty-state">GitHub data is temporarily unavailable. The site will update when its scheduled data refresh succeeds.</p>';
-    if (activity) activity.innerHTML = '<p class="empty-state">GitHub activity data is temporarily unavailable. Please try again after the next data refresh.</p>';
+    console.error("Could not load the published GitHub snapshot; switching to live GitHub API data:", error);
+    // The generated JSON snapshot is optional. If it is missing or Pages has
+    // not deployed it yet, build the project list from GitHub directly instead
+    // of leaving the entire Projects section blank.
+    try {
+      const [repos, events] = await Promise.all([
+        github(`/users/${encodeURIComponent(GITHUB_USER)}/repos?type=owner&sort=updated&per_page=100`),
+        github(`/users/${encodeURIComponent(GITHUB_USER)}/events/public?per_page=100`).catch(() => [])
+      ]);
+      const visibleRepos = (Array.isArray(repos) ? repos : [])
+        .filter((repo) => !repo.fork && !repo.archived)
+        .sort((a, b) => new Date(b.pushed_at || 0) - new Date(a.pushed_at || 0));
+      const liveItems = visibleRepos.map((repo) => ({
+        repo,
+        // The public repositories endpoint includes each repository's
+        // primary language. Full byte proportions are shown when the snapshot
+        // is available; this fallback keeps the project cards functional.
+        languages: repo.language ? { [repo.language]: 1 } : {}
+      }));
+      portfolioRepos = visibleRepos;
+      githubEvents = Array.isArray(events) ? events : [];
+      githubCommits = [];
+      if (!liveItems.length) {
+        projects.innerHTML = '<p class="empty-state">No public repositories were found.</p>';
+      } else {
+        renderProjects(liveItems);
+        observeReveals(projects);
+      }
+      await loadLatestCommits();
+    } catch (fallbackError) {
+      console.error("Live GitHub fallback also failed:", fallbackError);
+      projects.innerHTML = '<p class="empty-state">GitHub is temporarily rate-limiting requests. Refresh in a minute.</p>';
+      if (activity) activity.innerHTML = '<p class="empty-state">Live GitHub activity is temporarily unavailable. Please try again shortly.</p>';
+    }
   }
 }
 function languageBreakdown(languages) {
