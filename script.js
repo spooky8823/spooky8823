@@ -75,12 +75,17 @@ async function loadPortfolio() {
       const visibleRepos = (Array.isArray(repos) ? repos : [])
         .filter((repo) => !repo.fork && !repo.archived)
         .sort((a, b) => new Date(b.pushed_at || 0) - new Date(a.pushed_at || 0));
-      const liveItems = visibleRepos.map((repo) => ({
-        repo,
-        // The public repositories endpoint includes each repository's
-        // primary language. Full byte proportions are shown when the snapshot
-        // is available; this fallback keeps the project cards functional.
-        languages: repo.language ? { [repo.language]: 1 } : {}
+      // Fetch each repository's real language-byte breakdown. The
+      // /users/:user/repos endpoint only exposes one primary language, which
+      // must not be presented as a 100% language breakdown.
+      const liveItems = await Promise.all(visibleRepos.map(async (repo) => {
+        try {
+          const languages = await github(`/repos/${encodeURIComponent(GITHUB_USER)}/${encodeURIComponent(repo.name)}/languages`);
+          return { repo, languages: languages && typeof languages === "object" ? languages : {} };
+        } catch (languageError) {
+          console.warn(`Could not load language breakdown for ${repo.name}:`, languageError);
+          return { repo, languages: {} };
+        }
       }));
       portfolioRepos = visibleRepos;
       githubEvents = Array.isArray(events) ? events : [];
